@@ -47,93 +47,123 @@ const extraKVKStories = [
 ];
 stories.push(...extraKVKStories);
 const storyLevels = {
-    1: [['Kuda', '🐎', ['Ini Kuda.', 'Bapa suka kuda.', 'Bapa suka bela kuda.', 'Kuda suka lari laju']],
-     ['Kera', '🐒', ['Ini Kera.', 'Mama suka bela kera.', 'Kera suka cari kutu.','Kaki Kera ada kutu']], 
-     ['Mimi', '🐱', ['Ini Mimi.', 'Mimi suka lari.', 'Ibu suka riba Mimi.', 'Ibu cuci mata Mimi']], 
-     ['Guli', '🔴 🟢 🟡', ['Ini Guli.', 'Guli ada lima biji.', 'Saya suka beli guli.', 'Tiga guli Biru', 'Dua guli ungu']], 
-     ['Ceri', '🍒', ['Ini Ceri.', 'Nini suka ceri.', 'Nini suka beli ceri.', 'Nini beli ceri di desa.']], 
-     ['Bola', '⚽', ['Ini Bola.', 'Nana ada bola.', 'Nana suka main bola.', 'Nana bagi bola kepada Papa.']], 
-     ['Kaki', '🦶', ['Ini Kaki.','Kaki kiri.', 'Kaki ada lima jari.', 'Kaki ada kuku.']], 
-     ['Mata', '👀', ['Ini Mata.','Mata ada dua.', 'Mata ada bulu.', 'Mata ada bulu mata.']], 
-     ['Buku', '📚', ['Ini Buku.', 'Bibi suka baca buku.', 'Bibi suka baca buku cerita.', 'Bibi ada tiga buku cerita.']], 
-     ['Pipi', '😊', ['Ini Pipi.', 'Pipi saya ada nasi.', 'Ibu cuci pipi saya.', 'Saya suka pipi saya.']],
-     ['Bayi', '👶', ['Ini Bayi.', 'Bayi itu nama Mina.', 'Ibu suka riba Mina.', 'Ibu beri Mina susu.']]],
+    1: [
+      ['Kuda', '🐎', ['Ini kuda.', 'Kuda lari laju.', 'Nana bela kuda.', 'Kuda suka Nana.']],
+      ['Bola', '⚽', ['Ini bola.', 'Bola itu biru.', 'Dina bawa bola.', 'Dina suka bola.']],
+      ['Buku', '📚', ['Ini buku.', 'Buku itu baru.', 'Bibi baca buku.', 'Buku ada di meja.']],
+      ['Mata', '👀', ['Ini mata.', 'Mata ada dua.', 'Mata Siti buka.', 'Siti jaga mata.']],
+      ['Bayi', '👶', ['Ini bayi.', 'Nama bayi Rina.', 'Mama riba bayi.', 'Bayi suka mama.']],
+      ['Kaki', '🦶', ['Ini kaki.', 'Kaki ada dua.', 'Didi lari laju.', 'Didi jaga kaki.']],
+      ['Ceri', '🍒', ['Ini ceri.', 'Ceri itu merah.', 'Nini beli ceri.', 'Nini suka ceri.']],
+      ['Guli', '🔴🟢🟡', ['Ini guli.', 'Guli itu biru.', 'Ari ada guli.', 'Ari suka guli.']],
+      ['Baju', '👕', ['Ini baju.', 'Baju itu baru.', 'Mama beli baju.', 'Dina suka baju.']],
+      ['Meja', '🪑', ['Ini meja.', 'Meja itu baru.', 'Buku ada di meja.', 'Bibi baca di meja.']],
+      ['Nasi', '🍚', ['Ini nasi.', 'Nasi ada di meja.', 'Mama suap Dina.', 'Dina suka nasi.']],
+      ['Susu', '🥛', ['Ini susu.', 'Susu itu suam.', 'Mama beri susu.', 'Bayi suka susu.']],
+      ['Topi', '🧢', ['Ini topi.', 'Topi itu biru.', 'Rina bawa topi.', 'Rina suka topi.']],
+      ['Roda', '🛞', ['Ini roda.', 'Roda ada dua.', 'Roda ada di beca.', 'Beca lalu laju.']],
+      ['Pasu', '🏺', ['Ini pasu.', 'Pasu itu biru.', 'Pasu ada di meja.', 'Ibu suka pasu.']],
+      ['Labu', '🎃', ['Ini labu.', 'Labu itu besar.', 'Ibu beli labu.', 'Labu ada di meja.']],
+      ['Sapu', '🧹', ['Ini sapu.', 'Sapu itu baru.', 'Ibu guna sapu.', 'Sapu ada di sisi.']],
+      ['Tali', '🪢', ['Ini tali.', 'Tali itu biru.', 'Didi bawa tali.', 'Tali ada di meja.']],
+      ['Dadu', '🎲', ['Ini dadu.', 'Dadu ada dua.', 'Dara baling dadu.', 'Dara suka dadu.']],
+      ['Roti', '🍞', ['Ini roti.', 'Roti ada di meja.', 'Ibu beri roti.', 'Rina suka roti.']],
+      ['Lori', '🚚', ['Ini lori.', 'Lori itu biru.', 'Lori lalu di desa.', 'Didi suka lori.']],
+      ['Beca', '🛺', ['Ini beca.', 'Beca ada roda.', 'Beca lalu laju.', 'Ari suka beca.']],
+      ['Desa', '🏡', ['Ini desa.', 'Desa itu damai.', 'Dara ada di desa.', 'Dara suka desa.']],
+      ['Kopi', '☕', ['Ini kopi.', 'Kopi itu suam.', 'Kopi ada di meja.', 'Bapa suka kopi.']],
+      ['Bapa', '👨', ['Ini bapa.', 'Bapa baca buku.', 'Bapa bawa bola.', 'Didi suka bapa.']],
+      ['Mama', '👩', ['Ini mama.', 'Mama baca buku.', 'Mama beli ceri.', 'Rina suka mama.']],
+      ['Dahi', '🙂', ['Ini dahi.', 'Dahi ada di muka.', 'Ibu usap dahi.', 'Dahi Rina lega.']],
+      ['Batu', '🪨', ['Ini batu.', 'Batu itu kelabu.', 'Batu ada di desa.', 'Didi lihat batu.']],
+      ['Padi', '🌾', ['Ini padi.', 'Padi ada di desa.', 'Padi itu muda.', 'Dara lihat padi.']],
+      ['Rusa', '🦌', ['Ini rusa.', 'Rusa lari laju.', 'Rusa ada di desa.', 'Dara lihat rusa.']]
+    ],
 
-    2: [['Bas Ali', '🚌', ['Ali suka bas.', 'Bas itu besar.', 'Ali duduk di dalam bas.']], 
-    ['Jam Baru', '⏰', ['Ini jam baru.', 'Jam itu ada di rak.', 'Jam berbunyi.']], 
-    ['Cat Rumah', '🎨', ['Cat rumah.', 'Cat rumah warna merah.', 'Ahmad suka cat.']], 
-    ['Beg Merah', '🎒', ['Ini beg merah.', 'Beg ada di atas rak.', 'Pen ada dalam beg.']], 
-    ['Van Ibu', '🚐', ['Ibu ada van.', 'Van itu laju.', 'Ali naik van.']], 
-    ['Tin Susu', '🥫', ['Ini tin susu.', 'Tin ada di meja.', 'Ali minum susu.']], 
-    ['Pen Biru', '🖊️', ['Pen Ali biru.', 'Ali tulis kad.', 'Kad itu kemas.']], 
-    ['Bunga Ros', '🌹', ['Ini ros merah.', 'Ros ada dalam pasu.', 'Ibu suka ros.']], 
-    ['Jus Limau', '🧃', ['Ali buat jus.', 'Jus itu manis.', 'Ali minum jus.']], 
-    ['Zip Seluar', '🤐', ['Zip seluar rosak.', 'Ibu tarik zip.', 'Zip sudah baik.']]],
+    2: [
+      ['Bas Ali', '🚌', ['Bas tiba pagi.', 'Ali naik bas.', 'Ibu ikut Ali.', 'Bas pergi ke pekan.']],
+      ['Jam Baru', '⏰', ['Ali ada jam baru.', 'Jam ada di rak.', 'Jam bunyi pagi.', 'Ali lihat jam.']],
+      ['Cat Rumah', '🎨', ['Ayah cat rumah.', 'Ali pilih cat biru.', 'Ayah mula cat.', 'Rumah jadi ceria.']],
+      ['Beg Merah', '🎒', ['Ali ada beg merah.', 'Buku ada di beg.', 'Pen ada di beg.', 'Ali bawa beg.']],
+      ['Van Ibu', '🚐', ['Ibu ada van biru.', 'Ali naik van.', 'Ibu bawa van.', 'Van tiba di pasar.']],
+      ['Tin Susu', '🥫', ['Ada tin susu.', 'Tin ada di meja.', 'Ibu buka tin.', 'Ali minum susu.']],
+      ['Pen Biru', '🖊️', ['Ali ada pen biru.', 'Pen ada di meja.', 'Ali guna pen.', 'Ali tulis nama.']],
+      ['Ros Merah', '🌹', ['Ibu beli ros merah.', 'Ros ada di pasu.', 'Pasu ada di meja.', 'Ibu suka ros.']],
+      ['Jus Limau', '🧃', ['Ibu buat jus limau.', 'Ali kacau jus.', 'Jus rasa manis.', 'Ali minum jus.']],
+      ['Zip Beg', '🎒', ['Zip beg Ali rosak.', 'Ibu tarik zip.', 'Zip kini baik.', 'Ali bawa beg.']],
+      ['Cari Bola', '⚽', ['Ali cari bola.', 'Bola tiada di meja.', 'Ali lihat di bawah.', 'Bola ada di situ.']],
+      ['Mimi Lapar', '🐱', ['Mimi rasa lapar.', 'Siti beri ikan.', 'Mimi makan ikan.', 'Mimi lalu lena.']],
+      ['Rak Buku', '📚', ['Buku ada di meja.', 'Ali ambil buku.', 'Ali susun di rak.', 'Rak jadi kemas.']],
+      ['Hujan Pagi', '🌧️', ['Pagi ini hujan.', 'Ali ada di rumah.', 'Ali baca buku.', 'Ibu buat roti.']],
+      ['Kasut Baru', '👟', ['Ayah beri kasut.', 'Kasut itu biru.', 'Ali cuba pakai.', 'Ali suka kasut.']],
+      ['Kad Untuk Ibu', '💌', ['Ali buat kad.', 'Ali tulis nama.', 'Ali beri kad pada ibu.', 'Ibu suka kad.']],
+      ['Di Taman', '🌳', ['Ali pergi ke taman.', 'Siti ikut Ali.', 'Mereka lihat rusa.', 'Rusa lari laju.']],
+      ['Kapal Kertas', '⛵', ['Ali lipat kertas.', 'Kertas jadi kapal.', 'Ali letak di air.', 'Kapal lalu di air.']],
+      ['Dadu Adik', '🎲', ['Adik ada dadu.', 'Dadu ada di lantai.', 'Ali kutip dadu.', 'Adik kata terima kasih.']],
+      ['Bas Sekolah', '🚌', ['Bas tiba pagi.', 'Ali naik bas.', 'Bas pergi ke sekolah.', 'Ali jumpa kawan.']],
+      ['Kebun Atuk', '🌱', ['Atuk ada kebun.', 'Ali ikut atuk.', 'Atuk tanam sawi.', 'Ali bantu atuk.']],
+      ['Ikan di Kolam', '🐟', ['Ada ikan di kolam.', 'Ikan itu kecil.', 'Siti beri makan.', 'Ikan lalu dekat.']],
+      ['Kotak Hadiah', '🎁', ['Ada kotak merah.', 'Kotak itu besar.', 'Ibu beri pada Siti.', 'Siti buka kotak.']],
+      ['Pergi ke Pantai', '🏖️', ['Ali pergi ke pantai.', 'Ibu ikut Ali.', 'Ali main pasir.', 'Ali lihat ombak.']],
+      ['Rama-rama', '🦋', ['Ada rama-rama.', 'Rama-rama itu kecil.', 'Siti lihat rama-rama.', 'Rama-rama lalu pergi.']],
+      ['Bekal Siti', '🍱', ['Siti bawa bekal.', 'Bekal ada nasi.', 'Siti makan nasi.', 'Siti rasa puas.']],
+      ['Main Bola', '⚽', ['Ali bawa bola.', 'Siti ikut Ali.', 'Mereka main bola.', 'Mereka rasa seronok.']],
+      ['Bantu Ibu', '🧹', ['Ibu sapu rumah.', 'Ali bantu ibu.', 'Ali susun buku.', 'Rumah jadi kemas.']],
+      ['Hari Sukan', '🏃', ['Hari ini sukan.', 'Ali masuk acara.', 'Ali lari laju.', 'Ibu beri pujian.']],
+      ['Anak Arnab', '🐇', ['Ada anak arnab.', 'Arnab itu putih.', 'Siti beri lobak.', 'Arnab makan lobak.']]
+    ],
 
-    3: [['Baju Ali', '👕', ['Ali pakai baju.', 'Baju itu biru.', 'Ali suka baju.']], 
-    ['Bola Biru', '⚽', ['Bola itu biru.', 'Ali sepak bola.', 'Bola masuk gol.']], 
-    ['Buku Baru', '📚', ['Ini buku baru.', 'Buku ada di meja.', 'Ali baca buku.']], 
-    ['Kaki Ali', '🦶', ['Kaki Ali luka.', 'Ibu ubat kaki.', 'Kaki Ali baik.']], 
-    ['Mata Siti', '👀', ['Mata Siti cantik.', 'Siti cuci mata.', 'Mata Siti bersih.']], 
-    ['Meja Kami', '🪑', ['Ini meja kami.', 'Buku ada di meja.', 'Meja itu kemas.']], 
-    ['Nasi Ibu', '🍚', ['Ibu masak nasi.', 'Nasi itu panas.', 'Ali makan nasi.']], 
-    ['Roda Bas', '🛞', ['Roda bas besar.', 'Roda bas bulat.', 'Bas boleh jalan.']], 
-    ['Susu Ali', '🥛', ['Ali minum susu.', 'Susu itu sedap.', 'Ali suka susu.']], 
-    ['Topi Merah', '🧢', ['Ini topi merah.', 'Topi ada di kepala.', 'Ali pakai topi.']]]
-
+    3: []
 };
 let activeStories = stories, storyLevel = null, quizLevel = null;
 let shortStoryPage = 0;
-const shortStories = [{ title: 'Kuda dan Rusa Berlumba', cover: '🐎🦌', pages: [
-    { emoji: '🌳', text: ['Pada suatu pagi, Kuda bertemu Rusa di tepi hutan.', 'Kuda suka berlari dengan pantas.', 'Rusa juga yakin dia boleh menang.'] },
-    { emoji: '🏁', text: ['Kuda dan Rusa bersetuju untuk berlumba.', 'Mereka memilih pokok besar sebagai garisan penamat.', 'Haiwan lain datang untuk melihat perlumbaan.'] },
-    { emoji: '🏃‍♂️💨', text: ['Perlumbaan pun bermula.', 'Kuda berlari laju di jalan yang rata.', 'Rusa berhenti seketika kerana jalan itu berbatu.'] },
-    { emoji: '🤝', text: ['Kuda nampak Rusa dalam kesusahan.', 'Kuda berhenti dan membantu Rusa mencari jalan yang selamat.', 'Mereka tiba di garisan penamat bersama-sama.'] },
-    { emoji: '🌟', text: ['Haiwan lain bertepuk tangan untuk Kuda dan Rusa.', 'Kuda dan Rusa belajar bahawa membantu kawan lebih penting daripada menang.', 'Pengajaran: Kita hendaklah saling membantu dan tidak sombong.'], lesson: true }
-] }];
-shortStories[0] = { title: 'Kuda dan Rusa', cover: '🐎🦌', pages: [
-    { emoji: '', text: ['Kuda suka berlari.', 'Kuda lari sangat laju.', '“Aku paling laju!” kata Kuda.', 'Rusa hanya diam.'] },
-    { emoji: '', text: ['Pada pagi itu, Rusa berkata,', '“Jom kita berlumba!”', 'Kuda ketawa.', 'Kuda yakin dia akan menang. Mereka pun mula berlumba.'] },
-    { emoji: '', text: ['Kuda lari dengan laju.', 'Rusa sudah jauh di belakang.', '“Aku boleh rehat dulu,” kata Kuda.', 'Kuda berhenti di bawah pokok. Tidak lama kemudian, Kuda tertidur.'] },
-    { emoji: '', text: ['Rusa nampak Kuda sedang tidur.', 'Rusa tidak berhenti.', 'Rusa terus berlari.', 'Sedikit demi sedikit, Rusa semakin dekat dengan garisan penamat.'] },
-    { emoji: '🏆', text: ['Kuda bangun lalu terus berlari.', 'Tetapi sudah terlambat!', 'Rusa sudah sampai dahulu.', '“Syabas, Rusa!” kata Kuda. Kuda sedar bahawa dia tidak patut sombong.'], lesson: true, lessonText: 'Jangan sombong dan jangan mudah memandang rendah orang lain.' }
-] };
-shortStories[0] = { title: 'Arnab dan Kura-kura', cover: '🐰🐢', pages: [
-    { emoji: '🐰', text: ['Arnab suka berlari.', 'Arnab lari sangat laju.', '“Aku paling laju!” kata Arnab.', 'Kura-kura hanya diam.'] },
-    { emoji: '🏁', text: ['Pada pagi itu, Kura-kura berkata,', '“Jom kita berlumba!”', 'Arnab ketawa.', 'Arnab yakin dia akan menang. Mereka pun mula berlumba.'] },
-    { emoji: '🌳😴', text: ['Arnab lari dengan laju.', 'Kura-kura sudah jauh di belakang.', '“Aku boleh rehat dulu,” kata Arnab.', 'Arnab berhenti di bawah pokok. Tidak lama kemudian, Arnab tertidur.'] },
-    { emoji: '🐢💨', text: ['Kura-kura nampak Arnab sedang tidur.', 'Kura-kura tidak berhenti.', 'Kura-kura terus berjalan.', 'Sedikit demi sedikit, Kura-kura semakin dekat dengan garisan penamat.'] },
-    { emoji: '🏆', text: ['Arnab bangun lalu terus berlari.', 'Tetapi sudah terlambat!', 'Kura-kura sudah sampai dahulu.', '“Syabas, Kura-kura!” kata Arnab. Arnab sedar bahawa dia tidak patut sombong.'], lesson: true, lessonText: 'Jangan sombong dan jangan mudah memandang rendah orang lain.' }
-] };
+let shortStorySelected = false;
+const shortStories = [
+  { title: 'Arnab dan Kura-kura', cover: '🐰🐢', pages: [
+    { emoji: '🌤️', text: ['Pada suatu pagi, Arnab bertemu Kura-kura.', 'Arnab suka mengejek Kura-kura yang berjalan perlahan.', 'Kura-kura mengajak Arnab berlumba.'] },
+    { emoji: '🏁', text: ['Perlumbaan pun bermula.', 'Arnab berlari sangat laju.', 'Kura-kura berjalan perlahan tetapi tidak berhenti.'] },
+    { emoji: '🌳😴', text: ['Arnab melihat Kura-kura jauh di belakang.', 'Arnab yakin dia akan menang.', 'Arnab berehat di bawah pokok lalu tertidur.'] },
+    { emoji: '🐢', text: ['Kura-kura terus berjalan.', 'Dia melalui Arnab yang sedang tidur.', 'Akhirnya Kura-kura hampir sampai ke garisan penamat.'] },
+    { emoji: '🏆', text: ['Arnab terjaga lalu berlari sekuat hati.', 'Namun Kura-kura sudah sampai dahulu.', 'Arnab sedar dia tidak patut sombong.'], lesson: true, lessonText: 'Rajin berusaha dan jangan memandang rendah orang lain.' }
+  ]},
+  { title: 'Singa dan Tikus', cover: '🦁🐭', pages: [
+    { emoji: '🦁', text: ['Seekor Singa sedang tidur di dalam hutan.', 'Tikus kecil berlari lalu terpijak kaki Singa.', 'Singa terjaga dan menangkap Tikus.'] },
+    { emoji: '🐭', text: ['Tikus meminta maaf kepada Singa.', '“Lepaskan saya. Mungkin saya boleh membantu kamu suatu hari nanti,” kata Tikus.', 'Singa ketawa tetapi melepaskannya.'] },
+    { emoji: '🪢', text: ['Beberapa hari kemudian, Singa terkena perangkap pemburu.', 'Singa terikat dengan tali yang kuat.', 'Singa mengaum meminta bantuan.'] },
+    { emoji: '🐭✨', text: ['Tikus terdengar suara Singa.', 'Tikus menggigit tali sedikit demi sedikit.', 'Akhirnya Singa berjaya bebas.'] },
+    { emoji: '🤝', text: ['Singa mengucapkan terima kasih kepada Tikus.', 'Singa kini tahu haiwan kecil juga boleh membantu.', 'Mereka menjadi kawan baik.'], lesson: true, lessonText: 'Jangan memandang rendah orang lain dan sentiasa membalas kebaikan.' }
+  ]},
+  { title: 'Gagak dan Air', cover: '🐦🏺', pages: [
+    { emoji: '☀️', text: ['Hari sangat panas.', 'Seekor Gagak berasa haus.', 'Gagak terbang mencari air.'] },
+    { emoji: '🏺', text: ['Gagak menjumpai sebuah pasu.', 'Ada sedikit air di dalam pasu.', 'Paruh Gagak tidak dapat mencapai air itu.'] },
+    { emoji: '🪨', text: ['Gagak tidak berputus asa.', 'Dia melihat batu-batu kecil di tanah.', 'Gagak mendapat satu idea.'] },
+    { emoji: '🐦', text: ['Gagak memasukkan batu ke dalam pasu satu demi satu.', 'Air di dalam pasu semakin naik.', 'Akhirnya Gagak dapat minum.'] },
+    { emoji: '💧', text: ['Gagak hilang rasa haus.', 'Dia gembira kerana berjaya menyelesaikan masalah.', 'Gagak pun terbang pulang.'], lesson: true, lessonText: 'Gunakan fikiran dan jangan mudah berputus asa.' }
+  ]},
+  { title: 'Semut yang Rajin', cover: '🐜🌾', pages: [
+    { emoji: '🌞', text: ['Pada musim panas, Semut sibuk mencari makanan.', 'Semut membawa makanan sedikit demi sedikit.', 'Dia menyimpannya di dalam sarang.'] },
+    { emoji: '🦗', text: ['Belalang melihat Semut bekerja.', 'Belalang mengajak Semut bermain sepanjang hari.', 'Semut memilih untuk menyiapkan kerjanya dahulu.'] },
+    { emoji: '🌧️', text: ['Beberapa minggu kemudian, hujan turun setiap hari.', 'Belalang sukar mencari makanan.', 'Belalang mula berasa lapar.'] },
+    { emoji: '🐜', text: ['Semut masih mempunyai makanan di dalam sarang.', 'Semut berkongsi sedikit makanan dengan Belalang.', 'Belalang berasa sangat bersyukur.'] },
+    { emoji: '🌟', text: ['Belalang belajar daripada Semut.', 'Dia berjanji akan rajin dan membuat persediaan.', 'Semut tersenyum mendengarnya.'], lesson: true, lessonText: 'Rajinlah berusaha dan bersedia sebelum menghadapi kesusahan.' }
+  ]},
+  { title: 'Anak Itik yang Berani', cover: '🦆🌊', pages: [
+    { emoji: '🦆', text: ['Ibu Itik membawa anak-anaknya ke kolam.', 'Semua anak itik masuk ke dalam air.', 'Seekor anak itik takut untuk berenang.'] },
+    { emoji: '💧', text: ['Ibu Itik berdiri dekat dengannya.', '“Cuba perlahan-lahan. Ibu ada di sini,” kata Ibu Itik.', 'Anak Itik mencelupkan kakinya ke dalam air.'] },
+    { emoji: '🏊', text: ['Anak Itik mula menggerakkan kakinya.', 'Dia terapung dan berenang sedikit.', 'Anak Itik mula berasa yakin.'] },
+    { emoji: '🦆🦆', text: ['Dia berenang bersama adik-beradiknya.', 'Mereka bermain di tepi kolam.', 'Anak Itik sangat gembira.'] },
+    { emoji: '⭐', text: ['Anak Itik berjaya mengatasi rasa takut.', 'Ibu Itik memujinya kerana berani mencuba.', 'Sejak itu, dia suka berenang.'], lesson: true, lessonText: 'Berani mencuba membantu kita belajar perkara baharu.' }
+  ]}
+];
+let shortStoryIndex = 0;
 const levelWords = { 1: ['ba','bi','bu','ca','da','di','ka','la','ma','na','pa','sa'], 2: ['bas','bom','cat','jam','jus','kad','pen','rak','tin','van'], 3: ['baju','bola','buku','kaki','mata','meja','nasi','roda','susu','topi'] };
 const levelEmojis = { 1: '🌱', 2: '⭐', 3: '🏆' };
-storyLevels[2] = stories;
-storyLevels[23] = [...storyLevels[2], ...storyLevels[3]];
-const storyEndings = {
-    'Rak Buku': 'Ali susun buku dengan kemas.', 'Bas Ke Taman': 'Ali bermain bersama kawan.', 'Kasut Baru': 'Ali berjalan dengan gembira.', 'Bola Ali': 'Ali dan kawan bersorak.', 'Topi Merah': 'Topi itu lindung kepala Ali.', 'Kad Untuk Ibu': 'Ibu peluk Ali dengan kasih.', 'Pasu Ros': 'Ros itu harum dan cantik.', 'Jam Pagi': 'Ali bersedia ke sekolah.', 'Buku Ali': 'Ali belajar kata baharu.', 'Kucing Tidur': 'Ali biar Kucing tidur lena.', 'Jus Manis': 'Ali beri sedikit jus kepada ibu.', 'Tin Biskut': 'Ali kongsi biskut dengan adik.', 'Van Biru': 'Van itu sampai dengan selamat.', 'Pen Hilang': 'Ali simpan pen di dalam beg.', 'Beg Sekolah': 'Ali sedia untuk belajar.', 'Bas Besar': 'Bas berhenti di depan sekolah.', 'Kucing Makan': 'Kucing kenyang dan tidur.', 'Ros Ibu': 'Ibu letak ros dekat tingkap.', 'Zip Beg': 'Ali senyum kerana beg sudah kemas.', 'Rak Mainan': 'Ali gembira melihat raknya.', 'Lari Pagi': 'Ali pulang dengan badan sihat.', 'Air Limau': 'Ibu dan Ali minum bersama.', 'Bola Dalam Bakul': 'Ali letak bola semula.', 'Kapal Kertas': 'Ali tepuk tangan dengan gembira.', 'Lukis Gambar': 'Ali tunjuk gambar kepada ibu.', 'Kampung Nenek': 'Ali suka melawat nenek.', 'Lencana Ali': 'Ali tunjuk lencana kepada ibu.', 'Kawan Baharu': 'Ali dan kawan bermain bola.', 'Pagi Di Taman': 'Mereka duduk rehat bersama.', 'Buku Di Rak': 'Rak itu nampak kemas.', 'Kad Merah': 'Ibu simpan kad itu.', 'Jus Untuk Siti': 'Siti ucap terima kasih.', 'Bas Pagi': 'Ali sampai ke sekolah.', 'Pen Dan Kad': 'Ayah suka kad buatan Ali.', 'Ros Di Pasu': 'Bilik itu harum.', 'Van Ayah': 'Mereka tiba di rumah.', 'Jam Berbunyi': 'Ali tidur pada waktunya.', 'Beg Ali': 'Ali jaga beg dengan baik.', 'Cat Comel': 'Cat mengiau dengan manja.', 'Hari Ceria': 'Ali belajar dengan yakin.', 'Baju Ali': 'Ali nampak kemas.', 'Bola Biru': 'Ali simpan bola di bakul.', 'Buku Baru': 'Ali baca buku itu lagi.', 'Kaki Ali': 'Ali boleh berjalan semula.', 'Mata Siti': 'Siti dapat melihat dengan jelas.', 'Meja Kami': 'Kami duduk belajar bersama.', 'Nasi Ibu': 'Ibu dan Ali makan bersama.', 'Roda Bas': 'Bas bergerak perlahan.', 'Susu Ali': 'Ali ucap terima kasih.', 'Topi Merah': 'Ali simpan topi di rak.'
-};
-storyLevels[23].slice(10).forEach(story => {
-    if (story[2].length < 4) story[2].push(storyEndings[story[0]] || 'Mereka pulang dengan gembira.');
-});
-storyLevels[3] = [
-  ['Baju Biru', '👕', ['Ali pakai baju biru.', 'Baju itu ada poket.', 'Ali simpan sapu tangan dalam poket.', 'Ali nampak kemas dan ceria.']],
-  ['Bola Masuk Gol', '⚽', ['Bola Ali warna merah.', 'Ali bawa bola ke padang.', 'Ali sepak bola dengan kuat.', 'Bola masuk gol dan semua bersorak!']],
-  ['Buku Bergambar', '📚', ['Siti dapat buku baharu.', 'Buku itu ada banyak gambar.', 'Siti baca bersama ibu.', 'Siti suka membaca setiap hari.']],
-  ['Kaki Yang Luka', '🦶', ['Kaki Ali luka sedikit.', 'Ibu cuci kaki Ali.', 'Ibu letak ubat pada luka.', 'Kaki Ali sudah baik.']],
-  ['Mata Siti', '👀', ['Mata Siti sangat cantik.', 'Siti cuci mata dengan air.', 'Siti lihat bunga di taman.', 'Siti tersenyum melihat bunga itu.']],
-  ['Meja Kemas', '🪑', ['Ini meja belajar kami.', 'Buku dan pensel ada di atas meja.', 'Kami susun semua barang.', 'Meja kami kelihatan sangat kemas.']],
-  ['Nasi Ibu', '🍚', ['Ibu masak nasi untuk makan malam.', 'Nasi itu masih panas.', 'Ali makan nasi bersama keluarga.', 'Semua orang suka masakan ibu.']],
-  ['Roda Bas', '🚌', ['Bas sekolah ada empat roda.', 'Roda bas itu besar dan bulat.', 'Bas bergerak di atas jalan.', 'Ali melambai kepada kawan.']],
-  ['Susu Untuk Ali', '🥛', ['Ali minum susu setiap pagi.', 'Susu itu sedap dan berkhasiat.', 'Ibu tuang susu ke dalam cawan.', 'Ali ucap terima kasih kepada ibu.']],
-  ['Topi Merah', '🧢', ['Ini topi merah kepunyaan Ali.', 'Ali pakai topi ketika bermain.', 'Topi itu lindung kepala Ali.', 'Ali simpan topi di atas rak.']]
-];
 const storage = { get: key => { try { return localStorage.getItem(key) } catch (e) { return null } }, set: (key, value) => { try { localStorage.setItem(key, value) } catch (e) {} } };
 
 // ===== JOM BACA FREEMIUM CONFIG =====
 // Tukar nombor di bawah kepada nombor WhatsApp penjual (format Malaysia: 60123456789).
 const PURCHASE_WHATSAPP = '601110798762';
 const PREMIUM_PRICE = 'RM9.90';
-const PREMIUM_UNLOCK_CODE = 'JOMBACA100';
 const FREE_STORY_LIMIT = 5;
 
 function isPremiumUnlocked() {
@@ -164,31 +194,97 @@ function buyPremium() {
     const text = encodeURIComponent(`Assalamualaikum, saya nak beli Jom Baca versi penuh ${PREMIUM_PRICE}.`);
     window.open(`https://wa.me/${PURCHASE_WHATSAPP}?text=${text}`, '_blank');
 }
-function submitUnlockCode() {
+async function submitUnlockCode() {
     const input = document.getElementById('unlockCode');
     const msg = document.getElementById('unlockMessage');
+    const button = document.querySelector('.premium-unlock');
     const code = (input?.value || '').trim().toUpperCase();
-    if (code === PREMIUM_UNLOCK_CODE.toUpperCase()) {
-        storage.set('jomBacaPremium', 'yes');
+
+    if (!code) {
         if (msg) {
-            msg.textContent = '🎉 Berjaya! Semua cerita telah dibuka.';
-            msg.className = 'unlock-message success';
-        }
-        setTimeout(() => {
-            closePremiumModal();
-            chooseStoryLevel();
-        }, 700);
-    } else {
-        if (msg) {
-            msg.textContent = 'Code tidak sah. Sila semak dan cuba lagi.';
+            msg.textContent = 'Sila masukkan unlock code.';
             msg.className = 'unlock-message error';
+        }
+        return;
+    }
+
+    const config = window.JOM_BACA_CONFIG || {};
+    const supabaseUrl = (config.supabaseUrl || '').replace(/\/+$/, '');
+    const supabaseAnonKey = config.supabaseAnonKey || '';
+
+    if (!supabaseUrl || !supabaseAnonKey || supabaseUrl.includes('PASTE_') || supabaseAnonKey.includes('PASTE_')) {
+        if (msg) {
+            msg.textContent = 'Sistem unlock belum disambungkan. Sila hubungi penjual.';
+            msg.className = 'unlock-message error';
+        }
+        return;
+    }
+
+    if (button) {
+        button.disabled = true;
+        button.textContent = '⏳ Semak code...';
+    }
+    if (msg) {
+        msg.textContent = '';
+        msg.className = 'unlock-message';
+    }
+
+    try {
+        const response = await fetch(`${supabaseUrl}/rest/v1/rpc/redeem_unlock_code`, {
+            method: 'POST',
+            headers: {
+                'apikey': supabaseAnonKey,
+                'Authorization': `Bearer ${supabaseAnonKey}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ p_code: code })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (result && result.success === true) {
+            storage.set('jomBacaPremium', 'yes');
+            storage.set('jomBacaRedeemedCode', code);
+
+            if (msg) {
+                msg.textContent = '🎉 Berjaya! Semua cerita telah dibuka.';
+                msg.className = 'unlock-message success';
+            }
+
+            setTimeout(() => {
+                closePremiumModal();
+                chooseStoryLevel();
+            }, 700);
+        } else {
+            if (msg) {
+                msg.textContent =
+                    result?.reason === 'used'
+                        ? 'Code ini telah digunakan.'
+                        : 'Code tidak sah. Sila semak dan cuba lagi.';
+                msg.className = 'unlock-message error';
+            }
+        }
+    } catch (error) {
+        console.error('Unlock error:', error);
+        if (msg) {
+            msg.textContent = 'Tak dapat semak code sekarang. Sila cuba lagi.';
+            msg.className = 'unlock-message error';
+        }
+    } finally {
+        if (button) {
+            button.disabled = false;
+            button.textContent = '🔓 Unlock Sekarang';
         }
     }
 }
 function premiumStatusHTML() {
     return isPremiumUnlocked()
         ? '<div class="premium-status unlocked">✅ Versi penuh telah dibuka</div>'
-        : `<div class="free-trial-note"><b>🎁 Cuba 5 cerita PERCUMA</b><span>Unlock semua cerita & tahap — ${PREMIUM_PRICE}</span><button onclick="openPremiumModal()">🔐 Buka Semua Cerita</button></div>`;
+        : `<div class="free-trial-note"><b>🎁 Cuba 5 cerita PERCUMA</b><span>Akses semua tahap & cerita — ${PREMIUM_PRICE}</span><button onclick="openPremiumModal()">🔐 Buka Semua Cerita</button></div>`;
 }
 // ===== END FREEMIUM CONFIG =====
 
@@ -213,7 +309,7 @@ function go(id) {
         renderWord();
     if (id === 'stories') {
         if (storyLevel === null) renderStoryLevels();
-        else { document.getElementById('storyLevelArea').innerHTML = ''; storyLevel === 3 ? renderShortStory() : (document.getElementById('shortStoryContent').style.display = 'none', document.getElementById('storyContent').style.display = 'block', renderStory()); }
+        else { document.getElementById('storyLevelArea').innerHTML = ''; storyLevel === 3 ? (shortStorySelected ? renderShortStory() : renderShortStoryMenu()) : (document.getElementById('shortStoryContent').style.display = 'none', document.getElementById('storyContent').style.display = 'block', renderStory()); }
     }
     if (id === 'quiz') {
         if (quizLevel === null) renderQuizLevels();
@@ -225,15 +321,93 @@ function go(id) {
 function save() {
     storage.set('kvk', JSON.stringify(s))
 }
-function voice(text, rate = 0.3) {
-    speechSynthesis.cancel();
-    let u = new SpeechSynthesisUtterance(text);
-    u.lang = 'ms-MY';
-    u.rate = rate;
-    let vs = speechSynthesis.getVoices();
-    u.voice = vs.find(v => v.lang.toLowerCase().startsWith('ms')) || vs.find(v => v.lang.toLowerCase().startsWith('id')) || null;
-    speechSynthesis.speak(u)
+
+
+
+// ===== AUDIO KHAS + TTS FALLBACK =====
+// Jika ada rakaman untuk perkataan tertentu, app akan main rakaman itu dahulu.
+// Jika fail tiada / gagal dimainkan, app akan guna TTS Bahasa Melayu seperti biasa.
+const SPEECH_RATE = {
+  word: 0.55,
+  sentence: 0.70,
+  slow: 0.35
+};
+
+// MP3 khas hanya untuk perkataan yang memang bermasalah.
+// Contoh: audio/bela.mp3
+const recordedAudioMap = {
+  bela: 'audio/bela.mp3',
+  'bapa suka bela kuda': 'audio/bela-kuda.mp3',
+  'nana bela kuda': 'audio/nana-bela-kuda.mp3'
+};
+
+function getIndonesianVoice() {
+  const voices = speechSynthesis.getVoices();
+  return (
+    voices.find(v => (v.lang || '').toLowerCase() === 'id-id') ||
+    voices.find(v => (v.lang || '').toLowerCase().startsWith('id')) ||
+    null
+  );
 }
+
+function playRecordedWordIfAvailable(text) {
+  const clean = (text || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[.!?,;:]+$/g, '');
+
+  const audioPath = recordedAudioMap[clean];
+  if (!audioPath) return false;
+
+  const audio = new Audio(audioPath);
+  audio.preload = 'auto';
+
+  audio.addEventListener('error', () => {
+    speakWithTTS(text, SPEECH_RATE.word, true);
+  }, { once: true });
+
+  audio.play().catch(() => {
+    speakWithTTS(text, SPEECH_RATE.word, true);
+  });
+
+  return true;
+}
+
+function speakWithTTS(text, rate = SPEECH_RATE.word, cancelFirst = true) {
+  return new Promise(resolve => {
+    if (cancelFirst) speechSynthesis.cancel();
+
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'id-ID';
+    u.rate = rate;
+
+    const indonesianVoice = getIndonesianVoice();
+    if (indonesianVoice) {
+      u.voice = indonesianVoice;
+      u.lang = indonesianVoice.lang || 'id-ID';
+    }
+
+    u.onend = resolve;
+    u.onerror = resolve;
+    speechSynthesis.speak(u);
+  });
+}
+
+function voice(text, rate) {
+  const clean = (text || '').trim();
+  const isSentence = /\s/.test(clean);
+
+  if (playRecordedWordIfAvailable(clean)) return;
+
+  const selectedRate =
+    typeof rate === 'number'
+      ? rate
+      : (isSentence ? SPEECH_RATE.sentence : SPEECH_RATE.word);
+
+  speakWithTTS(clean, selectedRate, true);
+}
+
+
 function speakWord() {
     let w = words[wi][0];
     voice(w);
@@ -242,7 +416,7 @@ function speakWord() {
 }
 function speakSlowly() {
     let w = words[wi][0].toUpperCase();
-    voice(w.split('').join('... ') + '... ' + w, 0.05);
+    voice(w.split('').join('... ') + '... ' + w, SPEECH_RATE.slow);
     s.learned.includes(w.toLowerCase()) || s.learned.push(w.toLowerCase());
     save()
 }
@@ -272,6 +446,241 @@ const syllableMap = {
     hanya: ['ha','nya'], penting: ['pen','ting'], belajar: ['be','la','jar'], saling: ['sa','ling'], mudah: ['mu','dah'], diam: ['di','am'], terus: ['ter','us'], dekat: ['de','kat'], pengajaran: ['pen','ga','jar','an'], orang: ['o','rang'], lain: ['la','in'], memandang: ['mem','an','dang'],aku: ['a','ku'], rehat: ['re','hat'], tertidur: ['ter','ti','dur'], kesalahan: ['ke','sa','lah','an'], menolong: ['me','no','long'], lebih: ['le','bih'], menang: ['me','nang'], paling: ['pa','ling'],berlari: ['ber','la','ri'], sangat: ['sa','ngat'], pada: ['pa','da'], berkata: ['ber','kata'], ketawa: ['ke','ta','wa'], mula: ['mu','la'], akan: ['a','kan'], dengan: ['de','ngan'], belakang: ['be','la','kang'], 
     tidak: ['ti','dak'], lama: ['la','ma'], kemudian: ['ke','mu','di','an'], nampak: ['nam','pak'], sedang: ['se','dang'], tidur: ['ti','dur'], sedikit: ['se','di','kit'], demi: ['de','mi'], semakin: ['se','ma','kin'], kita: ['ki','ta'], berjalan: ['ber','ja','lan'], tetapi: ['te','ta','pi'], terlambat: ['ter','lam','bat'], dahulu: ['da','hu','lu'], syabas: ['sya','bas'], sedar: ['se','dar'], bahawa: ['ba','ha','wa'], patut: ['pa','tut'], lalu: ['la','lu'],  bela: ['be','la'], 
 };
+
+// Pecahan suku kata Tahap 2: maksimum 3 huruf bagi setiap bahagian.
+Object.assign(syllableMap, {
+  tiba:['ti','ba'], ikut:['i','kut'], pekan:['pe','kan'], bunyi:['bun','yi'],
+  ayah:['A','yah'], pilih:['pi','lih'], jadi:['ja','di'], ceria:['ce','ri','a'],
+  merah:['me','rah'], pasar:['pa','sar'], buka:['bu','ka'], nama:['na','ma'],
+  buat:['bu','at'], kacau:['ka','cau'], rasa:['ra','sa'], kini:['ki','ni'],
+  cari:['ca','ri'], tiada:['ti','a','da'], lihat:['li','hat'], bawah:['ba','wah'],
+  situ:['si','tu'], lapar:['la','par'], beri:['be','ri'], susun:['su','sun'],
+  hujan:['hu','jan'], cuba:['cu','ba'], pakai:['pa','kai'], pada:['pa','da'],
+  mereka:['me','re','ka'], rusa:['ru','sa'], lipat:['li','pat'], kertas:['ker','tas'],
+  letak:['le','tak'], adik:['a','dik'], lantai:['lan','tai'], kutip:['ku','tip'],
+  kata:['ka','ta'], terima:['te','ri','ma'], kasih:['ka','sih'], jumpa:['jum','pa'],
+  kawan:['ka','wan'], sekolah:['se','ko','lah'], rumah:['ru','mah'], kasut:['ka','sut'],
+  kapal:['ka','pal'], limau:['li','mau'], manis:['ma','nis'], rosak:['ro','sak'],
+  tarik:['ta','rik'], baik:['ba','ik']
+});
+
+
+Object.assign(syllableMap, {
+  ayah:['A','yah'], rumah:['ru','mah'], pilih:['pi','lih'], mula:['mu','la'],
+  ceria:['ce','ri','a'], merah:['me','rah'], buku:['bu','ku'], bawa:['ba','wa'],
+  biru:['bi','ru'], pasar:['pa','sar'], buka:['bu','ka'], minum:['mi','num'],
+  tulis:['tu','lis'], nama:['na','ma'], beli:['be','li'], pasu:['pa','su'],
+  limau:['li','mau'], kacau:['ka','cau'], manis:['ma','nis'], rosak:['ro','sak'],
+  tarik:['ta','rik'], baik:['ba','ik'], cari:['ca','ri'], tiada:['ti','a','da'],
+  lihat:['li','hat'], bawah:['ba','wah'], situ:['si','tu'], lapar:['la','par'],
+  beri:['be','ri'], ikan:['i','kan'], makan:['ma','kan'], lena:['le','na'],
+  ambil:['am','bil'], susun:['su','sun'], kemas:['ke','mas'], hujan:['hu','jan'],
+  roti:['ro','ti'], kasut:['ka','sut'], cuba:['cu','ba'], pakai:['pa','kai'],
+  untuk:['un','tuk'], pada:['pa','da'], pergi:['per','gi'], taman:['ta','man'],
+  mereka:['me','re','ka'], rusa:['ru','sa'], lipat:['li','pat'], kertas:['ker','tas'],
+  kapal:['ka','pal'], letak:['le','tak'], dadu:['da','du'], adik:['a','dik'],
+  lantai:['lan','tai'], kutip:['ku','tip'], kata:['ka','ta'], terima:['te','ri','ma'],
+  kasih:['ka','sih'], sekolah:['se','ko','lah'], jumpa:['jum','pa'], kawan:['ka','wan'],
+  pekan:['pe','kan'], bunyi:['bun','yi']
+});
+
+
+Object.assign(syllableMap, {
+  kebun:['ke','bun'], atuk:['a','tuk'], tanam:['ta','nam'], sawi:['sa','wi'],
+  bantu:['ban','tu'], kolam:['ko','lam'], kecil:['ke','cil'], dekat:['de','kat'],
+  kotak:['ko','tak'], hadiah:['ha','di','ah'], besar:['be','sar'], pantai:['pan','tai'],
+  pasir:['pa','sir'], ombak:['om','bak'],
+  pokok:['po','kok'],
+  bekal:['be','kal'],
+
+  seronok:['se','ro','nok'], sapu:['sa','pu'], acara:['a','ca','ra'], pujian:['pu','ji','an'],
+  arnab:['ar','nab'], putih:['pu','tih'], lobak:['lo','bak']
+});
+
+
+Object.assign(syllableMap, {
+  rama:['ra','ma'], puas:['pu','as']
+});
+
+
+// Lengkapkan warna suku kata untuk SEMUA perkataan Tahap 1 & Tahap 2 yang masih tiada.
+Object.assign(syllableMap, {
+  anak:['a','nak'],
+  ari:['A','ri'],
+  baca:['ba','ca'],
+  baju:['ba','ju'],
+  baling:['ba','ling'],
+  batu:['ba','tu'],
+  bayi:['ba','yi'],
+  beca:['be','ca'],
+  dahi:['da','hi'],
+  damai:['da','mai'],
+  dara:['da','ra'],
+  di:['di'],
+  didi:['di','di'],
+  dina:['di','na'],
+  jaga:['ja','ga'],
+  jam:['jam'],
+  ke:['ke'],
+  kelabu:['ke','la','bu'],
+  kopi:['ko','pi'],
+  labu:['la','bu'],
+  lega:['le','ga'],
+  lori:['lo','ri'],
+  masuk:['ma','suk'],
+  muda:['mu','da'],
+  muka:['mu','ka'],
+  nasi:['na','si'],
+  nini:['ni','ni'],
+  padi:['pa','di'],
+  rina:['ri','na'],
+  roda:['ro','da'],
+  siti:['si','ti'],
+  suam:['su','am'],
+  suap:['su','ap'],
+  sukan:['su','kan'],
+  tali:['ta','li'],
+  usap:['u','sap'],
+  zip:['zip']
+});
+
+// Lengkapkan warna suku kata untuk semua perkataan Tahap 3 yang masih tiada.
+Object.assign(syllableMap, {
+  akhirnya:['a','khir','nya'],
+  anaknya:['a','nak','nya'],
+  asa:['a','sa'],
+  bantuan:['ban','tu','an'],
+  bebas:['be','bas'],
+  beberapa:['be','be','ra','pa'],
+  bekerja:['be','ker','ja'],
+  belalang:['be','la','lang'],
+  beradiknya:['ber','a','dik','nya'],
+  berani:['be','ra','ni'],
+  berasa:['be','ra','sa'],
+  berdiri:['ber','di','ri'],
+  berehat:['be','re','hat'],
+  berenang:['be','re','nang'],
+  berjanji:['ber','jan','ji'],
+  berjaya:['ber','ja','ya'],
+  berkongsi:['ber','kong','si'],
+  bermain:['ber','main'],
+  bermula:['ber','mu','la'],
+  berputus:['ber','pu','tus'],
+  bersedia:['ber','se','di','a'],
+  bersyukur:['ber','syu','kur'],
+  bertemu:['ber','te','mu'],
+  berusaha:['ber','u','sa','ha'],
+  boleh:['bo','leh'],
+  dapat:['da','pat'],
+  dengannya:['de','ngan','nya'],
+  dia:['di','a'],
+  fikiran:['fi','ki','ran'],
+  gagak:['ga','gak'],
+  gembira:['gem','bi','ra'],
+  gunakan:['gu','na','kan'],
+  haiwan:['hai','wan'],
+  hampir:['ham','pir'],
+  hati:['ha','ti'],
+  haus:['ha','us'],
+  idea:['i','de','a'],
+  itik:['i','tik'],
+  jangan:['jan','gan'],
+  jauh:['ja','uh'],
+  juga:['ju','ga'],
+  kakinya:['ka','ki','nya'],
+  kamu:['ka','mu'],
+  kebaikan:['ke','ba','ik','an'],
+  kerana:['ke','ra','na'],
+  kerjanya:['ker','ja','nya'],
+  kuat:['ku','at'],
+  lahan:['la','han'],
+  lepaskan:['le','pas','kan'],
+  maaf:['ma','af'],
+  makanan:['ma','kan','an'],
+  masalah:['ma','sa','lah'],
+  masih:['ma','sih'],
+  melalui:['me','la','lu','i'],
+  melepaskannya:['me','le','pas','kan','nya'],
+  melihat:['me','li','hat'],
+  memasukkan:['me','ma','suk','kan'],
+  membalas:['mem','ba','las'],
+  membawa:['mem','ba','wa'],
+  membuat:['mem','bu','at'],
+  memilih:['me','mi','lih'],
+  meminta:['me','min','ta'],
+  mempunyai:['mem','pu','nya','i'],
+  memujinya:['me','mu','ji','nya'],
+  menangkap:['me','nang','kap'],
+  mencapai:['men','ca','pai'],
+  mencari:['men','ca','ri'],
+  mencelupkan:['men','ce','lup','kan'],
+  mencuba:['men','cu','ba'],
+  mendapat:['men','da','pat'],
+  mendengarnya:['men','de','ngar','nya'],
+  mengajak:['meng','a','jak'],
+  mengatasi:['meng','a','ta','si'],
+  mengaum:['meng','a','um'],
+  mengejek:['me','nge','jek'],
+  menggerakkan:['meng','ge','rak','kan'],
+  menggigit:['meng','gi','git'],
+  menghadapi:['meng','ha','da','pi'],
+  mengucapkan:['meng','u','cap','kan'],
+  menjadi:['men','ja','di'],
+  menjumpai:['men','jum','pai'],
+  menyelesaikan:['me','nye','le','sai','kan'],
+  menyiapkan:['me','nyi','ap','kan'],
+  menyimpannya:['me','nyim','pan','nya'],
+  minggu:['ming','gu'],
+  mungkin:['mung','kin'],
+  musim:['mu','sim'],
+  namun:['na','mun'],
+  nanti:['nan','ti'],
+  panas:['pa','nas'],
+  paruh:['pa','ruh'],
+  pemburu:['pem','bu','ru'],
+  perangkap:['pe','rang','kap'],
+  perkara:['per','ka','ra'],
+  perlumbaan:['per','lum','ba','an'],
+  persediaan:['per','se','di','a','an'],
+  pulang:['pu','lang'],
+  pun:['pun'],
+  rajin:['ra','jin'],
+  rajinlah:['ra','jin','lah'],
+  sarang:['sa','rang'],
+  satu:['sa','tu'],
+  saya:['sa','ya'],
+  sebelum:['se','be','lum'],
+  sebuah:['se','bu','ah'],
+  seekor:['se','e','kor'],
+  sejak:['se','jak'],
+  sekuat:['se','ku','at'],
+  semua:['se','mu','a'],
+  semut:['se','mut'],
+  sentiasa:['sen','ti','a','sa'],
+  sepanjang:['se','pan','jang'],
+  setiap:['se','ti','ap'],
+  sibuk:['si','buk'],
+  singa:['si','nga'],
+  sini:['si','ni'],
+  suara:['su','a','ra'],
+  suatu:['su','a','tu'],
+  sukar:['su','kar'],
+  tahu:['ta','hu'],
+  takut:['ta','kut'],
+  tanah:['ta','nah'],
+  tepi:['te','pi'],
+  terbang:['ter','bang'],
+  terdengar:['ter','de','ngar'],
+  terikat:['ter','i','kat'],
+  terjaga:['ter','ja','ga'],
+  terkena:['ter','ke','na'],
+  terpijak:['ter','pi','jak'],
+  tersenyum:['ter','se','nyum'],
+  tikus:['ti','kus'],
+  turun:['tu','run'],
+  yang:['yang']
+});
+
 function colourSyllables(sentence) {
     return sentence.split(/(\p{L}+|[^\p{L}]+)/u).filter(Boolean).map(part => {
         if (!/^\p{L}+$/u.test(part)) return `<span class="punctuation">${part}</span>`;
@@ -285,21 +694,26 @@ function colourSyllables(sentence) {
 function sentenceWithCapitalStart(sentence) {
     return sentence.replace(/^(\s*)(\p{L})/u, (_, space, firstLetter) => space + firstLetter.toUpperCase());
 }
-function replaceCatWithKucing(text) {
-    return text.replace(/\bCat\b/g, 'Kucing').replace(/\bcat\b/g, 'kucing');
-}
 function levelButtons(type) {
     const labels = type === 'story'
-        ? [['🌱 Tahap 1 – KV Mudah', 1], ['⭐ Tahap 2 – KVK Sederhana', 2], ['🏆 Tahap 3 – Cerita Pendek', 3]]
-        : [['🌱 Tahap 1 – KV', 1], ['⭐ Tahap 2 – KVK', 2], ['🏆 Tahap 3 – KVKV', 3]];
+        ? [
+            ['🌱 Tahap 1 – Bacaan Mudah<br><small>30 cerita • Fokus KV</small>', 1],
+            ['⭐ Tahap 2 – Bacaan Sederhana<br><small>30 cerita • Fokus KVK</small>', 2],
+            ['🏆 Tahap 3 – Cerita Pendek<br><small>5 cerita • Membaca & memahami</small>', 3]
+          ]
+        : [
+            ['🌱 Tahap 1 – KV', 1],
+            ['⭐ Tahap 2 – KVK', 2],
+            ['🏆 Tahap 3 – Kefahaman', 3]
+          ];
     return '<div class="level-options">' + labels.map(item => {
         if (type === 'story' && !isPremiumUnlocked() && item[1] > 1) {
             return `<button class="level-card locked" onclick="openPremiumModal()">${item[0]} <span class="lock-badge">🔒 Premium</span></button>`;
         }
-        return `<button class="level-card" onclick="select${type === 'story' ? 'Story' : 'Quiz'}Level(${item[1]})">${item[0]}${type === 'story' && item[1] === 1 && !isPremiumUnlocked() ? '<span class="free-badge">5 cerita FREE</span>' : ''}</button>`;
+        return `<button class="level-card" onclick="select${type === 'story' ? 'Story' : 'Quiz'}Level(${item[1]})">${item[0]}${type === 'story' && item[1] === 1 && !isPremiumUnlocked() ? '<span class="free-badge">5 cerita percuma</span>' : ''}</button>`;
     }).join('') + '</div>';
 }
-function renderStoryLevels() { document.getElementById('storyContent').style.display = 'none'; document.getElementById('storyLevelArea').innerHTML = '<div class="storybook-animals" aria-hidden="true"><span>🦊</span><span>🐰</span><span>🦉</span><span>🐻</span></div><h3>Pilih tahap cerita</h3><p class="storybook-subtitle">Jom buka buku dan baca bersama!</p>' + premiumStatusHTML() + levelButtons('story') }
+function renderStoryLevels() { const outsideList = document.getElementById('shortStoryListOutside'); if (outsideList) outsideList.style.display = 'none'; document.getElementById('storyContent').style.display = 'none'; document.getElementById('storyLevelArea').innerHTML = '<div class="storybook-animals" aria-hidden="true"><span>🦊</span><span>🐰</span><span>🦉</span><span>🐻</span></div><h3>Pilih tahap bacaan</h3><p class="storybook-subtitle">Belajar membaca langkah demi langkah 🌈</p>' + premiumStatusHTML() + levelButtons('story') }
 function selectStoryLevel(level) {
     if (!isPremiumUnlocked() && level > 1) {
         openPremiumModal();
@@ -311,7 +725,11 @@ function selectStoryLevel(level) {
     storage.set('kvkStoryLevel', level);
     storage.set('kvkStoryIndex', si);
     document.getElementById('storyLevelArea').innerHTML = '';
-    if (level === 3) renderShortStory();
+    if (level === 3) {
+        shortStorySelected = false;
+        shortStoryPage = 0;
+        renderShortStoryMenu();
+    }
     else {
         document.getElementById('shortStoryContent').style.display = 'none';
         document.getElementById('storyContent').style.display = 'block';
@@ -319,22 +737,77 @@ function selectStoryLevel(level) {
     }
 }
 function chooseStoryLevel() { storyLevel = null; activeStories = stories; document.getElementById('storyContent').style.display = 'none'; document.getElementById('shortStoryContent').style.display = 'none'; renderStoryLevels() }
-function renderShortStory() { const box = document.getElementById('shortStoryContent'); const story = shortStories[0]; const page = story.pages[shortStoryPage]; box.style.display = 'block'; document.getElementById('storyContent').style.display = 'none'; box.innerHTML = `<div class="short-story-cover">${story.cover}</div><h2>${story.title}</h2><div class="short-story-emoji">${page.emoji}</div><div class="short-story-text">${page.text.map(t => { const sentence = sentenceWithCapitalStart(t); return `<div class="story-line"><span>${colourSyllables(sentence)}</span><button class="mini" onclick="voice('${sentence.replaceAll("'", '')}')">🔊</button></div>` }).join('')}</div>${page.lesson ? `<div class="lesson-box">🌟 <b>Pengajaran</b><br>${page.lessonText}</div>` : ''}<div class="short-story-nav"><button class="secondary" onclick="changeShortStoryPage(-1)" ${shortStoryPage === 0 ? 'disabled' : ''}>⬅</button><span class="pill"> ${shortStoryPage + 1}/5</span><button class="primary" onclick="changeShortStoryPage(1)" ${shortStoryPage === 4 ? 'disabled' : ''}>➡</button></div>` }
-function changeShortStoryPage(n) { shortStoryPage = (shortStoryPage + n + 5) % 5; renderShortStory() }
-const renderShortStoryWithEnabledNavigation = renderShortStory;
-renderShortStory = function () { renderShortStoryWithEnabledNavigation(); document.querySelectorAll('#shortStoryContent .short-story-nav button').forEach(button => button.disabled = false); }
+function renderShortStoryMenu() {
+    const outsideList = document.getElementById('shortStoryListOutside'); if (outsideList) outsideList.style.display = 'none';
+    const box = document.getElementById('shortStoryContent');
+    shortStorySelected = false;
+    shortStoryPage = 0;
+    box.style.display = 'block';
+    document.getElementById('storyContent').style.display = 'none';
+
+    box.innerHTML = `<div class="short-story-cover">📚✨</div>
+        <h2>Pilih Cerita Pendek</h2>
+        <p class="storybook-subtitle">Pilih satu cerita untuk mula membaca.</p>
+        <div class="level-options short-story-menu">
+            ${shortStories.map((story, index) => `
+                <button class="level-card" onclick="selectShortStory(${index})">
+                    <span style="font-size:2rem;display:block;margin-bottom:6px">${story.cover}</span>
+                    ${story.title}
+                </button>
+            `).join('')}
+        </div>
+        `;
+}
+
+function selectShortStory(index) {
+    shortStoryIndex = index;
+    shortStoryPage = 0;
+    shortStorySelected = true;
+    renderShortStory();
+}
+
+function backToShortStoryMenu() {
+    shortStorySelected = false;
+    shortStoryPage = 0;
+    renderShortStoryMenu();
+}
+
+function renderShortStory() {
+    const box = document.getElementById('shortStoryContent');
+    const story = shortStories[shortStoryIndex];
+    const page = story.pages[shortStoryPage];
+    box.style.display = 'block';
+    document.getElementById('storyContent').style.display = 'none';
+    const outsideList = document.getElementById('shortStoryListOutside');
+    if (outsideList) {
+        outsideList.style.display = 'block';
+        outsideList.innerHTML = '<button class="secondary" onclick="renderShortStoryMenu()">← Senarai Cerita</button>';
+    }
+    box.innerHTML = `<div class="short-story-cover">${story.cover}</div><h2>${story.title}</h2><div class="short-story-emoji">${page.emoji}</div><div class="short-story-text">${page.text.map(t => { const sentence = sentenceWithCapitalStart(t); return `<div class="story-line"><span>${colourSyllables(sentence)}</span><button class="mini" onclick="voice('${sentence.replaceAll("'", '')}')">🔊</button></div>` }).join('')}</div>${page.lesson ? `<div class="lesson-box">🌟 <b>Pengajaran</b><br>${page.lessonText}</div>` : ''}<div class="short-story-nav"><button class="secondary" onclick="changeShortStoryPage(-1)">⬅</button><span class="pill">${shortStoryPage + 1}/5</span><button class="primary" onclick="changeShortStoryPage(1)">➡</button></div>`;
+}
+function changeShortStoryPage(n) { shortStoryPage = (shortStoryPage + n + 5) % 5; renderShortStory(); }
+function changeShortStory(n) { shortStoryIndex = (shortStoryIndex + n + shortStories.length) % shortStories.length; shortStoryPage = 0; renderShortStory(); }
 function renderQuizLevels() { document.getElementById('quizContent').style.display = 'none'; document.getElementById('quizLevelArea').innerHTML = '<h3>Pilih tahap kuiz</h3>' + levelButtons('quiz') }
 function selectQuizLevel(level) { quizLevel = level; storage.set('kvkQuizLevel', level); document.getElementById('quizLevelArea').innerHTML = ''; document.getElementById('quizContent').style.display = 'block'; newQuiz() }
 function chooseQuizLevel() { quizLevel = null; document.getElementById('quizContent').style.display = 'none'; renderQuizLevels() }
 function renderStory() {
     let x = activeStories[si];
+    const outsideList = document.getElementById('shortStoryListOutside'); if (outsideList) outsideList.style.display = 'none';
     document.getElementById('storyCount').textContent = (si + 1) + '/' + activeStories.length;
     storyEmoji.textContent = x[1];
-    storyTitle.textContent = replaceCatWithKucing(x[0]);
-    storyText.innerHTML = x[2].map((t, i) => { const sentence = sentenceWithCapitalStart(replaceCatWithKucing(t)); return `<div class="story-line"><span>${colourSyllables(sentence)}</span><button class="mini" onclick="voice('${sentence.replaceAll("'", '')}')">🔊</button></div>` }).join('')
+    storyTitle.textContent = x[0];
+    storyText.innerHTML = x[2].map((t, i) => { const sentence = sentenceWithCapitalStart(t); return `<div class="story-line"><span>${colourSyllables(sentence)}</span><button class="mini" onclick="voice('${sentence.replaceAll("'", '')}')">🔊</button></div>` }).join('')
 }
-function readStory() {
-    activeStories[si][2].map(replaceCatWithKucing).map(sentenceWithCapitalStart).forEach((x, i) => setTimeout(() => voice(x), i * 1700));
+async function readStory() {
+    const lines = activeStories[si][2].map(sentenceWithCapitalStart);
+
+    // Cancel sekali sahaja. Selepas itu baca ayat satu demi satu.
+    speechSynthesis.cancel();
+
+    for (const line of lines) {
+        await speakWithTTS(line, SPEECH_RATE.sentence, false);
+    }
+
     if (!s.stories.includes(si))
         s.stories.push(si);
     save()

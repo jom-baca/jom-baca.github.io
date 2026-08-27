@@ -16,7 +16,7 @@
   <main class="app">
     <div class="topbar">
       <!-- <div class="brand">Jom <span>Baca</span> KVK! 🔤</div> -->
-      <!-- <button class="icon-btn" onclick="go('home')">⌂</button> -->
+      <!-- <button class="icon-btn" onclick="go('home')">🏠</button> -->
     </div>
     <section id="home" class="screen">
       <div class="hero">
@@ -31,7 +31,7 @@
         <!-- <button class="parent-link" onclick="go('parent')">👩‍🏫 Ibu Bapa / Guru</button> -->
     </section>
     <!-- <section id="learn" class="screen">
-      <div class="heading"><button class="back" onclick="go('home')">⌂</button>
+      <div class="heading"><button class="back" onclick="go('home')">🏠</button>
         <h2>Belajar KVK</h2>
       </div>
       <div class="card">
@@ -54,7 +54,7 @@
     <section id="stories" class="screen active">
       <div class="heading button-container">
         <h2>Cerita Kanak-Kanak</h2>
-        <button class="back" onclick="chooseStoryLevel()">⌂</button>
+        <button class="back" onclick="chooseStoryLevel()">🏠</button>
       </div>
       <div class="card">
         <div id="storyLevelArea"></div>
@@ -76,12 +76,13 @@
         <!-- <button class="secondary story-level-button" onclick="chooseStoryLevel()">Tukar Tahap</button> -->
         </div>
         <div id="shortStoryContent" style="display:none"></div>
+        <div id="shortStoryListOutside" class="short-story-list-outside" style="display:none"></div>
       </div>
     </section>
     <!-- <section id="quiz" class="screen">
       <div class="heading button-container">
         <h2>Kuiz KVK 🎮</h2>
-        <button class="back" onclick="go('home')">⌂</button>
+        <button class="back" onclick="go('home')">🏠</button>
       </div>
       <div class="card quiz-card">
         <div id="quizLevelArea"></div>
@@ -95,7 +96,7 @@
       </div>
     </section> -->
     <!-- <section id="progress" class="screen">
-      <div class="heading"><button class="back" onclick="go('home')">⌂</button>
+      <div class="heading"><button class="back" onclick="go('home')">🏠</button>
         <h2>Pencapaian Saya ⭐</h2>
       </div>
       <div class="card">
@@ -110,7 +111,7 @@
       </div>
     </section> -->
     <section id="parent" class="screen">
-      <div class="heading"><button class="back" onclick="go('home')">⌂</button>
+      <div class="heading"><button class="back" onclick="go('home')">🏠</button>
         <h2>Ibu Bapa / Guru</h2>
       </div>
       <div class="card teacher">
@@ -135,12 +136,13 @@
       <button class="premium-buy" onclick="buyPremium()">💬 Beli RM9.90 melalui WhatsApp</button>
       <div class="premium-divider"><span>Sudah bayar?</span></div>
       <label class="premium-label" for="unlockCode">Masukkan unlock code</label>
-      <input id="unlockCode" class="premium-input" type="text" autocomplete="off" placeholder="Contoh: JOMBACA100">
+      <input id="unlockCode" class="premium-input" type="text" autocomplete="off" placeholder="Contoh: JB-7K2M-P9QX">
       <button class="premium-unlock" onclick="submitUnlockCode()">🔓 Unlock Sekarang</button>
       <p id="unlockMessage" class="unlock-message" aria-live="polite"></p>
     </div>
   </div>
   <div id="toast" class="toast"></div>
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 

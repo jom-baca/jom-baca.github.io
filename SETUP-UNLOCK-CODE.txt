@@ -1,0 +1,48 @@
+JOM BACA - SETUP UNIQUE ONE-TIME UNLOCK CODE
+
+1. Pergi ke https://supabase.com dan create project baru.
+
+2. Dalam Supabase:
+   SQL Editor -> New query
+   Copy semua kandungan "supabase-setup.sql" -> Run.
+
+3. Pergi:
+   Project Settings -> API
+
+   Copy:
+   - Project URL
+   - anon / publishable key
+
+4. Buka "config.js" dan isi:
+
+   window.JOM_BACA_CONFIG = {
+     supabaseUrl: 'https://xxxx.supabase.co',
+     supabaseAnonKey: 'YOUR_ANON_KEY'
+   };
+
+5. Generate code:
+   Dalam Supabase SQL Editor run:
+
+   select * from public.generate_unlock_codes(20);
+
+   Ia akan hasilkan code seperti:
+   JB-A1B2-C3D4
+
+6. Customer bayar -> beri satu code.
+
+7. Bila customer redeem:
+   - code valid & belum guna -> unlock berjaya
+   - database terus mark used=true
+   - code sama tak boleh digunakan kali kedua
+
+8. Untuk tengok semua code:
+   select code, used, used_at, created_at
+   from public.unlock_codes
+   order by id desc;
+
+PENTING:
+- Jangan letak service_role key dalam website.
+- Hanya guna anon/publishable key dalam config.js.
+- Selepas redeem, premium disimpan dalam localStorage browser.
+- Jika customer clear browser data / tukar device, code lama sudah used.
+  Untuk kes genuine, anda boleh generate code baru secara manual.

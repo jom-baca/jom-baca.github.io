@@ -690,3 +690,25 @@ button:focus-visible {
 .unlock-message.success { color: #278366; }
 .unlock-message.error { color: #c95778; }
 /* ===== End freemium ===== */
+
+.short-story-list-bottom { text-align: center; margin: 18px 0 14px; }
+
+.short-story-list-outside {
+  position: fixed;
+  left: 50%;
+  bottom: 108px;
+  z-index: 20;
+  transform: translateX(-50%);
+  text-align: center;
+  margin: 0;
+}
+
+.short-story-list-outside .secondary {
+  padding: 12px 22px;
+  border: 2px solid #ccefe7;
+  border-radius: 18px;
+  background: #e4faf4;
+  color: #28786c;
+  box-shadow: 0 6px 16px #6d5aa52b;
+  white-space: nowrap;
+}
