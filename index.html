@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ms">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- <title>Jom Baca KVK!</title> -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.png" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#7257d9">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+    <div class="topbar">
+      <!-- <div class="brand">Jom <span>Baca</span> KVK! 🔤</div> -->
+      <!-- <button class="icon-btn" onclick="go('home')">⌂</button> -->
+    </div>
+    <section id="home" class="screen">
+      <div class="hero">
+        <h1>Jom Baca Buku Cerita! 🔤</h1>
+        <p>Belajar membaca sambil dengar</p>
+      </div>
+      <div class="menu">
+        <!-- <button onclick="go('learn')">🔊<br>Belajar KVK</button> -->
+        <button onclick="go('stories')">📖<br>Cerita Kanak-Kanak</button>
+        <!-- <button onclick="go('quiz')">🎮<br>Kuiz KVK</button> -->
+        <!-- <button  onclick="go('progress')">⭐<br>Pencapaian Saya</button> </div> -->
+        <!-- <button class="parent-link" onclick="go('parent')">👩‍🏫 Ibu Bapa / Guru</button> -->
+    </section>
+    <!-- <section id="learn" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">⌂</button>
+        <h2>Belajar KVK</h2>
+      </div>
+      <div class="card">
+        <div id="learnImg" class="illustration">🚌</div>
+        <div id="word" class="word">BAS</div>
+        <div id="formula" class="syllables">B + A + S = BAS</div>
+        <div class="letters">
+          <div class="letter"><b id="c1">B</b><br><small>Konsonan</small></div>
+          <div class="letter"><b id="v">A</b><br><small>Vokal</small></div>
+          <div class="letter"><b id="c2">S</b><br><small>Konsonan</small></div>
+        </div>
+        <p class="legend">Huruf → bunyi → perkataan</p>
+        <div><button class="primary" onclick="speakWord()">🔊 Dengar</button><button class="secondary"
+            onclick="speakSlowly()">🐢 Sebut Perlahan</button><button class="secondary" onclick="speakWord()">🔊
+            Ulang</button></div>
+        <div class="navrow"><button class="secondary" onclick="changeWord(-1)">⬅ Sebelum</button><span id="count"
+            class="pill">1 / 30</span><button class="primary" onclick="changeWord(1)">Seterusnya ➡</button></div>
+      </div>
+    </section> -->
+    <section id="stories" class="screen active">
+      <div class="heading button-container">
+        <h2>Cerita Kanak-Kanak</h2>
+        <button class="back" onclick="chooseStoryLevel()">⌂</button>
+      </div>
+      <div class="card">
+        <div id="storyLevelArea"></div>
+        <div id="storyContent" style="display:none">
+        <div id="storyEmoji" class="illustration">🚌</div>
+        <h2 id="storyTitle">Bas Ali</h2>
+        <div id="storyText" class="story-text"></div>
+        <!-- <button class="primary" onclick="readStory()">🔊 Baca Semua</button> -->
+        <!-- <div class="navrow"> -->
+          <!-- <button class="primary" onclick="readStory()">🔊 Baca
+            Semua</button> -->
+          
+        <!-- </div> -->
+        <div class="navrow">
+          <button class="secondary" onclick="changeStory(-1)">⬅</button>
+          <span id="storyCount" class="pill">1/50</span>
+          <button class="primary" onclick="changeStory(1)">➡</button>
+        </div>
+        <!-- <button class="secondary story-level-button" onclick="chooseStoryLevel()">Tukar Tahap</button> -->
+        </div>
+        <div id="shortStoryContent" style="display:none"></div>
+      </div>
+    </section>
+    <!-- <section id="quiz" class="screen">
+      <div class="heading button-container">
+        <h2>Kuiz KVK 🎮</h2>
+        <button class="back" onclick="go('home')">⌂</button>
+      </div>
+      <div class="card quiz-card">
+        <div id="quizLevelArea"></div>
+        <div id="quizContent" style="display:none">
+        <p class="prompt" id="quizPrompt">Apakah ini?</p>
+        <div id="quizVisual" class="quiz-img">🚌</div>
+        <div id="quizArea"></div>
+        <div id="feedback" class="feedback"></div><button class="secondary" onclick="newQuiz()">Soalan baharu ↻</button>
+        <button class="secondary" onclick="chooseQuizLevel()">← Tukar Tahap</button>
+        </div>
+      </div>
+    </section> -->
+    <!-- <section id="progress" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">⌂</button>
+        <h2>Pencapaian Saya ⭐</h2>
+      </div>
+      <div class="card">
+        <div class="progress-grid">
+          <div class="stat"><strong id="learned">0/30</strong>Perkataan dipelajari</div>
+          <div class="stat"><strong id="score">0</strong>Jawapan betul</div>
+          <div class="stat"><strong id="read">0/50</strong>Cerita dibaca</div>
+        </div>
+        <div class="stars" id="stars">☆ ☆ ☆</div>
+        <div class="bar"><i id="bar" style="width:0%"></i></div>
+        <p id="percent">0% kemajuan</p>
+      </div>
+    </section> -->
+    <section id="parent" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">⌂</button>
+        <h2>Ibu Bapa / Guru</h2>
+      </div>
+      <div class="card teacher">
+        <h3>Ringkasan pembelajaran</h3>
+        <p id="parentSummary"></p>
+        <ul>
+          <li>Perkataan selesai: <b id="pWords"></b></li>
+          <li>Skor kuiz: <b id="pScore"></b></li>
+          <li>Cerita selesai: <b id="pStories"></b></li>
+          <li>Perkataan perlu latihan: <span id="pWrong" class="wrong"></span></li>
+        </ul><button class="secondary" onclick="resetProgress()">Reset Progress</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="premiumModal" class="premium-modal" aria-hidden="true">
+    <div class="premium-dialog" role="dialog" aria-modal="true" aria-labelledby="premiumTitle">
+      <button class="premium-close" onclick="closePremiumModal()" aria-label="Tutup">×</button>
+      <div class="premium-icon">🔐</div>
+      <h2 id="premiumTitle">Buka Semua Cerita</h2>
+      <p>5 cerita pertama adalah <b>PERCUMA</b>. Buka semua tahap dan cerita dengan hanya <b>RM9.90</b>.</p>
+      <button class="premium-buy" onclick="buyPremium()">💬 Beli RM9.90 melalui WhatsApp</button>
+      <div class="premium-divider"><span>Sudah bayar?</span></div>
+      <label class="premium-label" for="unlockCode">Masukkan unlock code</label>
+      <input id="unlockCode" class="premium-input" type="text" autocomplete="off" placeholder="Contoh: JOMBACA100">
+      <button class="premium-unlock" onclick="submitUnlockCode()">🔓 Unlock Sekarang</button>
+      <p id="unlockMessage" class="unlock-message" aria-live="polite"></p>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
