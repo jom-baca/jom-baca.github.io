@@ -19,6 +19,9 @@
       <!-- <button class="icon-btn" onclick="go('home')">🏠</button> -->
     </div>
     <section id="home" class="screen">
+<div id="installAppWrap" class="install-app-wrap" style="display:none">
+<button id="installAppBtn" class="install-app-btn" onclick="installJomBaca()">📲 Pasang Jom Baca</button>
+</div>
       <div class="hero">
         <h1>Jom Baca Buku Cerita! 🔤</h1>
         <p>Belajar membaca sambil dengar</p>
@@ -144,6 +147,15 @@
   <div id="toast" class="toast"></div>
   <script src="config.js"></script>
   <script src="script.js"></script>
+<div id="iosInstallModal" class="ios-install-modal" aria-hidden="true">
+<div class="ios-install-card">
+<button class="ios-install-close" onclick="closeIosInstallGuide()">✕</button>
+<div class="ios-install-icon">📲</div>
+<h3>Pasang Jom Baca</h3>
+<p>Simpan Jom Baca di Home Screen supaya mudah dibuka macam aplikasi.</p>
+<ol><li>Tekan ikon <b>Share ⬆️</b> di Safari.</li><li>Pilih <b>Add to Home Screen</b>.</li><li>Tekan <b>Add</b>.</li></ol>
+<button class="primary" onclick="closeIosInstallGuide()">Faham 👍</button>
+</div></div>
 </body>
 
 </html>

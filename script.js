@@ -910,3 +910,37 @@ speechSynthesis.onvoiceschanged = () => {};
 storyLevel = null;
 activeStories = stories;
 renderStoryLevels();
+
+// ===== PWA INSTALL =====
+let deferredInstallPrompt = null;
+function isIosDevice(){ return /iphone|ipad|ipod/i.test(navigator.userAgent); }
+function isStandaloneMode(){ return matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; }
+function updateInstallButtonVisibility(){
+  const wrap=document.getElementById('installAppWrap');
+  if(!wrap) return;
+  wrap.style.display=(!isStandaloneMode() && (deferredInstallPrompt || isIosDevice())) ? '' : 'none';
+}
+window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferredInstallPrompt=e; updateInstallButtonVisibility(); });
+window.addEventListener('appinstalled',()=>{ deferredInstallPrompt=null; updateInstallButtonVisibility(); });
+async function installJomBaca(){
+  if(isStandaloneMode()) return updateInstallButtonVisibility();
+  if(isIosDevice()){
+    const m=document.getElementById('iosInstallModal');
+    if(m){m.classList.add('show');m.setAttribute('aria-hidden','false');}
+    return;
+  }
+  if(deferredInstallPrompt){
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt=null;
+    updateInstallButtonVisibility();
+    return;
+  }
+  alert('Buka menu browser dan pilih “Install app” atau “Add to Home Screen”.');
+}
+function closeIosInstallGuide(){
+  const m=document.getElementById('iosInstallModal');
+  if(m){m.classList.remove('show');m.setAttribute('aria-hidden','true');}
+}
+document.addEventListener('DOMContentLoaded',updateInstallButtonVisibility);
+if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(console.warn));

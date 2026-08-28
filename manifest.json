@@ -1,15 +1,17 @@
 {
-  "name": "Jom Baca KVK",
-  "short_name": "Jom Baca KVK",
-  "description": "Belajar membaca perkataan KVK sambil bermain.",
+  "name": "Jom Baca",
+  "short_name": "Jom Baca",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#fff5f8",
-  "theme_color": "#7257d9",
-  "icons": [{
-    "src": "icon.png",
-    "sizes": "any",
-    "type": "image/svg+xml",
-    "purpose": "any maskable"
-  }]
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
