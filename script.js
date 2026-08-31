@@ -918,15 +918,16 @@ function isStandaloneMode(){ return matchMedia('(display-mode: standalone)').mat
 function updateInstallButtonVisibility(){
   const wrap=document.getElementById('installAppWrap');
   if(!wrap) return;
-  wrap.style.display=(!isStandaloneMode() && (deferredInstallPrompt || isIosDevice())) ? '' : 'none';
+  wrap.style.display=isStandaloneMode() ? 'none' : '';
+  if (isStandaloneMode()) console.log('[PWA] App already installed');
 }
-window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferredInstallPrompt=e; updateInstallButtonVisibility(); });
+window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferredInstallPrompt=e; console.log('[PWA] beforeinstallprompt fired'); updateInstallButtonVisibility(); });
 window.addEventListener('appinstalled',()=>{ deferredInstallPrompt=null; updateInstallButtonVisibility(); });
 async function installJomBaca(){
   if(isStandaloneMode()) return updateInstallButtonVisibility();
   if(isIosDevice()){
     const m=document.getElementById('iosInstallModal');
-    if(m){m.classList.add('show');m.setAttribute('aria-hidden','false');}
+    if(m){m.querySelector('p').textContent='Jika anda menggunakan Chrome pada iPhone, buka Jom Baca menggunakan Safari untuk memasangnya.'; m.classList.add('show');m.setAttribute('aria-hidden','false');}
     return;
   }
   if(deferredInstallPrompt){
@@ -936,11 +937,14 @@ async function installJomBaca(){
     updateInstallButtonVisibility();
     return;
   }
-  alert('Buka menu browser dan pilih “Install app” atau “Add to Home Screen”.');
+  console.log('[PWA] Install prompt unavailable - showing manual instructions');
+  const manual=document.getElementById('manualInstallModal');
+  if(manual){manual.classList.add('show');manual.setAttribute('aria-hidden','false');}
 }
 function closeIosInstallGuide(){
   const m=document.getElementById('iosInstallModal');
   if(m){m.classList.remove('show');m.setAttribute('aria-hidden','true');}
 }
+function closeManualInstallGuide(){ const m=document.getElementById('manualInstallModal'); if(m){m.classList.remove('show');m.setAttribute('aria-hidden','true');} }
 document.addEventListener('DOMContentLoaded',updateInstallButtonVisibility);
-if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(console.warn));
+if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js',{scope:'./'}).then(()=>console.log('[PWA] Service worker registered')).catch(err=>console.warn('[PWA] Service worker registration failed',err)));

@@ -5,9 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <!-- <title>Jom Baca KVK!</title> -->
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon.png" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Jom Baca">
   <meta name="theme-color" content="#7257d9">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,7 +22,7 @@
       <!-- <button class="icon-btn" onclick="go('home')">🏠</button> -->
     </div>
     <section id="home" class="screen">
-<div id="installAppWrap" class="install-app-wrap" style="display:none">
+<div id="installAppWrap" class="install-app-wrap">
 <button id="installAppBtn" class="install-app-btn" onclick="installJomBaca()">📲 Pasang Jom Baca</button>
 </div>
       <div class="hero">
@@ -155,6 +158,15 @@
 <p>Simpan Jom Baca di Home Screen supaya mudah dibuka macam aplikasi.</p>
 <ol><li>Tekan ikon <b>Share ⬆️</b> di Safari.</li><li>Pilih <b>Add to Home Screen</b>.</li><li>Tekan <b>Add</b>.</li></ol>
 <button class="primary" onclick="closeIosInstallGuide()">Faham 👍</button>
+</div></div>
+<div id="manualInstallModal" class="ios-install-modal" aria-hidden="true">
+<div class="ios-install-card">
+<button class="ios-install-close" onclick="closeManualInstallGuide()">✕</button>
+<div class="ios-install-icon">📲</div>
+<h3>Pasang Jom Baca</h3>
+<p>Untuk pasang Jom Baca:</p>
+<ol><li>Tekan menu <b>⋮</b> Chrome.</li><li>Pilih <b>Install app</b> atau <b>Add to Home screen</b>.</li></ol>
+<button class="primary" onclick="closeManualInstallGuide()">Faham 👍</button>
 </div></div>
 </body>
 
