@@ -913,38 +913,111 @@ renderStoryLevels();
 
 // ===== PWA INSTALL =====
 let deferredInstallPrompt = null;
+let autoInstallPopupShown = false;
+
 function isIosDevice(){ return /iphone|ipad|ipod/i.test(navigator.userAgent); }
 function isStandaloneMode(){ return matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; }
+
 function updateInstallButtonVisibility(){
   const wrap=document.getElementById('installAppWrap');
   if(!wrap) return;
   wrap.style.display=isStandaloneMode() ? 'none' : '';
   if (isStandaloneMode()) console.log('[PWA] App already installed');
 }
-window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferredInstallPrompt=e; console.log('[PWA] beforeinstallprompt fired'); updateInstallButtonVisibility(); });
-window.addEventListener('appinstalled',()=>{ deferredInstallPrompt=null; updateInstallButtonVisibility(); });
+
+function openPwaInstallModal(){
+  if(isStandaloneMode() || isIosDevice() || autoInstallPopupShown) return;
+  const modal=document.getElementById('pwaInstallModal');
+  if(!modal) return;
+  autoInstallPopupShown=true;
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden','false');
+}
+
+function closePwaInstallModal(){
+  const modal=document.getElementById('pwaInstallModal');
+  if(modal){
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+  }
+}
+
+window.addEventListener('beforeinstallprompt', e => {
+  // Simpan native Chrome prompt supaya ia boleh dibuka selepas user tekan butang.
+  e.preventDefault();
+  deferredInstallPrompt=e;
+  console.log('[PWA] beforeinstallprompt fired');
+  updateInstallButtonVisibility();
+  // Tunjuk popup Jom Baca di home page secara automatik.
+  setTimeout(openPwaInstallModal, 700);
+});
+
+window.addEventListener('appinstalled',()=>{
+  deferredInstallPrompt=null;
+  closePwaInstallModal();
+  updateInstallButtonVisibility();
+});
+
+async function confirmPwaInstall(){
+  closePwaInstallModal();
+  if(!deferredInstallPrompt){
+    const manual=document.getElementById('manualInstallModal');
+    if(manual){manual.classList.add('show');manual.setAttribute('aria-hidden','false');}
+    return;
+  }
+
+  deferredInstallPrompt.prompt();
+  const choice=await deferredInstallPrompt.userChoice;
+  console.log('[PWA] userChoice:', choice.outcome);
+  deferredInstallPrompt=null;
+  updateInstallButtonVisibility();
+}
+
 async function installJomBaca(){
   if(isStandaloneMode()) return updateInstallButtonVisibility();
+
   if(isIosDevice()){
     const m=document.getElementById('iosInstallModal');
-    if(m){m.querySelector('p').textContent='Jika anda menggunakan Chrome pada iPhone, buka Jom Baca menggunakan Safari untuk memasangnya.'; m.classList.add('show');m.setAttribute('aria-hidden','false');}
+    if(m){
+      m.classList.add('show');
+      m.setAttribute('aria-hidden','false');
+    }
     return;
   }
+
   if(deferredInstallPrompt){
-    deferredInstallPrompt.prompt();
-    await deferredInstallPrompt.userChoice;
-    deferredInstallPrompt=null;
-    updateInstallButtonVisibility();
+    openPwaInstallModal();
     return;
   }
+
   console.log('[PWA] Install prompt unavailable - showing manual instructions');
   const manual=document.getElementById('manualInstallModal');
   if(manual){manual.classList.add('show');manual.setAttribute('aria-hidden','false');}
 }
+
 function closeIosInstallGuide(){
   const m=document.getElementById('iosInstallModal');
   if(m){m.classList.remove('show');m.setAttribute('aria-hidden','true');}
 }
-function closeManualInstallGuide(){ const m=document.getElementById('manualInstallModal'); if(m){m.classList.remove('show');m.setAttribute('aria-hidden','true');} }
-document.addEventListener('DOMContentLoaded',updateInstallButtonVisibility);
-if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js',{scope:'./'}).then(()=>console.log('[PWA] Service worker registered')).catch(err=>console.warn('[PWA] Service worker registration failed',err)));
+function closeManualInstallGuide(){
+  const m=document.getElementById('manualInstallModal');
+  if(m){m.classList.remove('show');m.setAttribute('aria-hidden','true');}
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  updateInstallButtonVisibility();
+  // iPhone/iPad tidak menyokong beforeinstallprompt. Tunjuk panduan Safari sekali
+  // apabila laman dibuka dan belum dipasang sebagai standalone.
+  if(isIosDevice() && !isStandaloneMode()){
+    setTimeout(()=>{
+      const m=document.getElementById('iosInstallModal');
+      if(m){m.classList.add('show');m.setAttribute('aria-hidden','false');}
+    }, 900);
+  }
+});
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js',{scope:'./'})
+    .then(()=>console.log('[PWA] Service worker registered'))
+    .catch(err=>console.warn('[PWA] Service worker registration failed',err)));
+}

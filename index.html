@@ -150,6 +150,17 @@
   <div id="toast" class="toast"></div>
   <script src="config.js"></script>
   <script src="script.js"></script>
+
+<div id="pwaInstallModal" class="ios-install-modal" aria-hidden="true">
+  <div class="ios-install-card">
+    <button class="ios-install-close" onclick="closePwaInstallModal()">✕</button>
+    <div class="ios-install-icon">📲</div>
+    <h3>Pasang Jom Baca</h3>
+    <p>Pasang di Home Screen supaya Jom Baca boleh dibuka macam aplikasi.</p>
+    <button class="primary" onclick="confirmPwaInstall()">📲 Pasang Sekarang</button>
+    <button class="secondary" onclick="closePwaInstallModal()">Nanti</button>
+  </div>
+</div>
 <div id="iosInstallModal" class="ios-install-modal" aria-hidden="true">
 <div class="ios-install-card">
 <button class="ios-install-close" onclick="closeIosInstallGuide()">✕</button>
