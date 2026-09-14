@@ -48,42 +48,42 @@ const extraKVKStories = [
 stories.push(...extraKVKStories);
 const storyLevels = {
     1: [
-      ['Kuda', '🐎', ['Ini kuda.', 'Kuda lari laju.', 'Nana bela kuda.', 'Kuda suka Nana.']],
+      ['Kuda', '🐎', ['Ini kuda.', 'Kuda lari laju.', 'Bapa naik kuda.', 'Kuda suka Bapa.']],
       ['Bola', '⚽', ['Ini bola.', 'Bola itu biru.', 'Dina bawa bola.', 'Dina suka bola.']],
       ['Buku', '📚', ['Ini buku.', 'Buku itu baru.', 'Bibi baca buku.', 'Buku ada di meja.']],
       ['Mata', '👀', ['Ini mata.', 'Mata ada dua.', 'Mata Siti buka.', 'Siti jaga mata.']],
       ['Bayi', '👶', ['Ini bayi.', 'Nama bayi Rina.', 'Mama riba bayi.', 'Bayi suka mama.']],
       ['Kaki', '🦶', ['Ini kaki.', 'Kaki ada dua.', 'Didi lari laju.', 'Didi jaga kaki.']],
-      ['Ceri', '🍒', ['Ini ceri.', 'Ceri itu merah.', 'Nini beli ceri.', 'Nini suka ceri.']],
+      ['Ceri', '🍒', ['Ini ceri.', 'Ceri ada dua.', 'Nini beli ceri.', 'Nini suka ceri.']],
       ['Guli', '🔴🟢🟡', ['Ini guli.', 'Guli itu biru.', 'Ari ada guli.', 'Ari suka guli.']],
       ['Baju', '👕', ['Ini baju.', 'Baju itu baru.', 'Mama beli baju.', 'Dina suka baju.']],
       ['Meja', '🪑', ['Ini meja.', 'Meja itu baru.', 'Buku ada di meja.', 'Bibi baca di meja.']],
       ['Nasi', '🍚', ['Ini nasi.', 'Nasi ada di meja.', 'Mama suap Dina.', 'Dina suka nasi.']],
       ['Susu', '🥛', ['Ini susu.', 'Susu itu suam.', 'Mama beri susu.', 'Bayi suka susu.']],
       ['Topi', '🧢', ['Ini topi.', 'Topi itu biru.', 'Rina bawa topi.', 'Rina suka topi.']],
-      ['Roda', '🛞', ['Ini roda.', 'Roda ada dua.', 'Roda ada di beca.', 'Beca lalu laju.']],
+      ['Roda', '🛞', ['Ini roda.', 'Roda ada dua.', 'Roda ada di beca.', 'Beca itu laju.']],
       ['Pasu', '🏺', ['Ini pasu.', 'Pasu itu biru.', 'Pasu ada di meja.', 'Ibu suka pasu.']],
-      ['Labu', '🎃', ['Ini labu.', 'Labu itu besar.', 'Ibu beli labu.', 'Labu ada di meja.']],
+      ['Labu', '🎃', ['Ini labu.', 'Labu itu muda.', 'Ibu beli labu.', 'Labu ada di meja.']],
       ['Sapu', '🧹', ['Ini sapu.', 'Sapu itu baru.', 'Ibu guna sapu.', 'Sapu ada di sisi.']],
       ['Tali', '🪢', ['Ini tali.', 'Tali itu biru.', 'Didi bawa tali.', 'Tali ada di meja.']],
-      ['Dadu', '🎲', ['Ini dadu.', 'Dadu ada dua.', 'Dara baling dadu.', 'Dara suka dadu.']],
+      ['Dadu', '🎲', ['Ini dadu.', 'Dadu ada dua.', 'Dara main dadu.', 'Dara suka dadu.']],
       ['Roti', '🍞', ['Ini roti.', 'Roti ada di meja.', 'Ibu beri roti.', 'Rina suka roti.']],
       ['Lori', '🚚', ['Ini lori.', 'Lori itu biru.', 'Lori lalu di desa.', 'Didi suka lori.']],
-      ['Beca', '🛺', ['Ini beca.', 'Beca ada roda.', 'Beca lalu laju.', 'Ari suka beca.']],
-      ['Desa', '🏡', ['Ini desa.', 'Desa itu damai.', 'Dara ada di desa.', 'Dara suka desa.']],
+      ['Beca', '🛺', ['Ini beca.', 'Beca ada roda.', 'Beca itu laju.', 'Ari suka beca.']],
+      ['Desa', '🏡', ['Ini desa.', 'Desa itu jauh dari kota.', 'Dara ada di desa.', 'Dara suka desa.']],
       ['Kopi', '☕', ['Ini kopi.', 'Kopi itu suam.', 'Kopi ada di meja.', 'Bapa suka kopi.']],
       ['Bapa', '👨', ['Ini bapa.', 'Bapa baca buku.', 'Bapa bawa bola.', 'Didi suka bapa.']],
       ['Mama', '👩', ['Ini mama.', 'Mama baca buku.', 'Mama beli ceri.', 'Rina suka mama.']],
-      ['Dahi', '🙂', ['Ini dahi.', 'Dahi ada di muka.', 'Ibu usap dahi.', 'Dahi Rina lega.']],
-      ['Batu', '🪨', ['Ini batu.', 'Batu itu kelabu.', 'Batu ada di desa.', 'Didi lihat batu.']],
-      ['Padi', '🌾', ['Ini padi.', 'Padi ada di desa.', 'Padi itu muda.', 'Dara lihat padi.']],
-      ['Rusa', '🦌', ['Ini rusa.', 'Rusa lari laju.', 'Rusa ada di desa.', 'Dara lihat rusa.']]
+      ['Dahi', '🙂', ['Ini dahi.', 'Dahi ada di muka.', 'Ibu usap dahi.', 'Dahi Rina luas.']],
+      ['Batu', '🪨', ['Ini batu.', 'Batu itu kelabu.', 'Batu ada di desa.', 'Didi main batu.']],
+      ['Padi', '🌾', ['Ini padi.', 'Padi ada di desa.', 'Padi itu muda.', 'Mina suka padi.']],
+      ['Rusa', '🦌', ['Ini rusa.', 'Rusa lari laju.', 'Rusa ada di desa.', 'Mina suka rusa.']]
     ],
 
     2: [
       ['Bas Ali', '🚌', ['Bas tiba pagi.', 'Ali naik bas.', 'Ibu ikut Ali.', 'Bas pergi ke pekan.']],
       ['Jam Baru', '⏰', ['Ali ada jam baru.', 'Jam ada di rak.', 'Jam bunyi pagi.', 'Ali lihat jam.']],
-      ['Cat Rumah', '🎨', ['Ayah cat rumah.', 'Ali pilih cat biru.', 'Ayah mula cat.', 'Rumah jadi ceria.']],
+      ['Baiki Rumah', '🛠️🏠', ['Ayah baiki rumah.', 'Rumah atap bocor.', 'Ayah mula baiki.', 'Atap rumah dah tak bocor.']],
       ['Beg Merah', '🎒', ['Ali ada beg merah.', 'Buku ada di beg.', 'Pen ada di beg.', 'Ali bawa beg.']],
       ['Van Ibu', '🚐', ['Ibu ada van biru.', 'Ali naik van.', 'Ibu bawa van.', 'Van tiba di pasar.']],
       ['Tin Susu', '🥫', ['Ada tin susu.', 'Tin ada di meja.', 'Ibu buka tin.', 'Ali minum susu.']],
@@ -95,21 +95,21 @@ const storyLevels = {
       ['Mimi Lapar', '🐱', ['Mimi rasa lapar.', 'Siti beri ikan.', 'Mimi makan ikan.', 'Mimi lalu lena.']],
       ['Rak Buku', '📚', ['Buku ada di meja.', 'Ali ambil buku.', 'Ali susun di rak.', 'Rak jadi kemas.']],
       ['Hujan Pagi', '🌧️', ['Pagi ini hujan.', 'Ali ada di rumah.', 'Ali baca buku.', 'Ibu buat roti.']],
-      ['Kasut Baru', '👟', ['Ayah beri kasut.', 'Kasut itu biru.', 'Ali cuba pakai.', 'Ali suka kasut.']],
+      ['Kasut Baru', '👟', ['Ayah beli kasut.', 'Kasut itu biru.', 'Ali cuba pakai.', 'Ali suka kasut.']],
       ['Kad Untuk Ibu', '💌', ['Ali buat kad.', 'Ali tulis nama.', 'Ali beri kad pada ibu.', 'Ibu suka kad.']],
       ['Di Taman', '🌳', ['Ali pergi ke taman.', 'Siti ikut Ali.', 'Mereka lihat rusa.', 'Rusa lari laju.']],
       ['Kapal Kertas', '⛵', ['Ali lipat kertas.', 'Kertas jadi kapal.', 'Ali letak di air.', 'Kapal lalu di air.']],
       ['Dadu Adik', '🎲', ['Adik ada dadu.', 'Dadu ada di lantai.', 'Ali kutip dadu.', 'Adik kata terima kasih.']],
       ['Bas Sekolah', '🚌', ['Bas tiba pagi.', 'Ali naik bas.', 'Bas pergi ke sekolah.', 'Ali jumpa kawan.']],
       ['Kebun Atuk', '🌱', ['Atuk ada kebun.', 'Ali ikut atuk.', 'Atuk tanam sawi.', 'Ali bantu atuk.']],
-      ['Ikan di Kolam', '🐟', ['Ada ikan di kolam.', 'Ikan itu kecil.', 'Siti beri makan.', 'Ikan lalu dekat.']],
+      ['Ikan di Kolam', '🐟', ['Ada ikan di kolam.', 'Ikan itu kecil.', 'Siti beri ikan makan.', 'Ikan suka makan.']],
       ['Kotak Hadiah', '🎁', ['Ada kotak merah.', 'Kotak itu besar.', 'Ibu beri pada Siti.', 'Siti buka kotak.']],
       ['Pergi ke Pantai', '🏖️', ['Ali pergi ke pantai.', 'Ibu ikut Ali.', 'Ali main pasir.', 'Ali lihat ombak.']],
       ['Rama-rama', '🦋', ['Ada rama-rama.', 'Rama-rama itu kecil.', 'Siti lihat rama-rama.', 'Rama-rama lalu pergi.']],
       ['Bekal Siti', '🍱', ['Siti bawa bekal.', 'Bekal ada nasi.', 'Siti makan nasi.', 'Siti rasa puas.']],
       ['Main Bola', '⚽', ['Ali bawa bola.', 'Siti ikut Ali.', 'Mereka main bola.', 'Mereka rasa seronok.']],
       ['Bantu Ibu', '🧹', ['Ibu sapu rumah.', 'Ali bantu ibu.', 'Ali susun buku.', 'Rumah jadi kemas.']],
-      ['Hari Sukan', '🏃', ['Hari ini sukan.', 'Ali masuk acara.', 'Ali lari laju.', 'Ibu beri pujian.']],
+      ['Hari Sukan', '🏃', ['Hari ini hari sukan.', 'Ali masuk acara.', 'Ali lari laju.', 'Ibu sorak Ali.']],
       ['Anak Arnab', '🐇', ['Ada anak arnab.', 'Arnab itu putih.', 'Siti beri lobak.', 'Arnab makan lobak.']]
     ],
 
@@ -136,9 +136,9 @@ const shortStories = [
   { title: 'Gagak dan Air', cover: '🐦🏺', pages: [
     { emoji: '☀️', text: ['Hari sangat panas.', 'Seekor Gagak berasa haus.', 'Gagak terbang mencari air.'] },
     { emoji: '🏺', text: ['Gagak menjumpai sebuah pasu.', 'Ada sedikit air di dalam pasu.', 'Paruh Gagak tidak dapat mencapai air itu.'] },
-    { emoji: '🪨', text: ['Gagak tidak berputus asa.', 'Dia melihat batu-batu kecil di tanah.', 'Gagak mendapat satu idea.'] },
+    { emoji: '🪨', text: ['Gagak tidak berputus asa.', 'Dia melihat batu-batu kecil di tanah.', 'Gagak terfikir satu cara.'] },
     { emoji: '🐦', text: ['Gagak memasukkan batu ke dalam pasu satu demi satu.', 'Air di dalam pasu semakin naik.', 'Akhirnya Gagak dapat minum.'] },
-    { emoji: '💧', text: ['Gagak hilang rasa haus.', 'Dia gembira kerana berjaya menyelesaikan masalah.', 'Gagak pun terbang pulang.'], lesson: true, lessonText: 'Gunakan fikiran dan jangan mudah berputus asa.' }
+    { emoji: '💧', text: ['Gagak hilang rasa haus.', 'Dia gembira kerana berjaya menyelesaikan masalah.', 'Gagak pun terbang balik.'], lesson: true, lessonText: 'Gunakan fikiran dan jangan mudah berputus asa.' }
   ]},
   { title: 'Semut yang Rajin', cover: '🐜🌾', pages: [
     { emoji: '🌞', text: ['Pada musim panas, Semut sibuk mencari makanan.', 'Semut membawa makanan sedikit demi sedikit.', 'Dia menyimpannya di dalam sarang.'] },
@@ -160,25 +160,108 @@ const levelWords = { 1: ['ba','bi','bu','ca','da','di','ka','la','ma','na','pa',
 const levelEmojis = { 1: '🌱', 2: '⭐', 3: '🏆' };
 const storage = { get: key => { try { return localStorage.getItem(key) } catch (e) { return null } }, set: (key, value) => { try { localStorage.setItem(key, value) } catch (e) {} } };
 
-// ===== JOM BACA FREEMIUM CONFIG =====
+// ===== JOM BACA ACCOUNT + FREEMIUM CONFIG =====
 // Tukar nombor di bawah kepada nombor WhatsApp penjual (format Malaysia: 60123456789).
 const PURCHASE_WHATSAPP = '601110798762';
 const PREMIUM_PRICE = 'RM9.90';
 const FREE_STORY_LIMIT = 5;
 
-function isPremiumUnlocked() {
-    return storage.get('jomBacaPremium') === 'yes';
+let currentAccount = null;
+let currentAccessToken = null;
+let currentRefreshToken = null;
+let currentPremium = false;
+let accountReady = false;
+
+const AUTH_SESSION_KEY = 'jomBacaAuthSession';
+
+function getSupabaseConfig() {
+    const config = window.JOM_BACA_CONFIG || {};
+    return {
+        supabaseUrl: (config.supabaseUrl || '').replace(/\/+$/, ''),
+        supabaseAnonKey: config.supabaseAnonKey || ''
+    };
 }
+
+function hasSupabaseConfig() {
+    const { supabaseUrl, supabaseAnonKey } = getSupabaseConfig();
+    return !!supabaseUrl && !!supabaseAnonKey && !supabaseUrl.includes('PASTE_') && !supabaseAnonKey.includes('PASTE_');
+}
+
+function isPremiumUnlocked() {
+    return currentPremium === true;
+}
+
+function saveAuthSession(session) {
+    if (!session?.access_token || !session?.refresh_token) return;
+    currentAccessToken = session.access_token;
+    currentRefreshToken = session.refresh_token;
+    currentAccount = session.user || currentAccount;
+    storage.set(AUTH_SESSION_KEY, JSON.stringify({
+        access_token: session.access_token,
+        refresh_token: session.refresh_token,
+        expires_at: session.expires_at || null,
+        user: session.user || null
+    }));
+}
+
+function clearAuthSession() {
+    currentAccount = null;
+    currentAccessToken = null;
+    currentRefreshToken = null;
+    currentPremium = false;
+    try { localStorage.removeItem(AUTH_SESSION_KEY); } catch (e) {}
+}
+
+function setAuthMessage(text, type = '') {
+    const msg = document.getElementById('unlockMessage');
+    if (!msg) return;
+    msg.textContent = text || '';
+    msg.className = 'unlock-message' + (type ? ` ${type}` : '');
+}
+
+function renderAccountUI() {
+    const loggedOut = document.getElementById('premiumLoggedOut');
+    const loggedIn = document.getElementById('premiumLoggedIn');
+    const emailEl = document.getElementById('accountEmail');
+    const stateEl = document.getElementById('accountPremiumState');
+    const redeemArea = document.getElementById('redeemArea');
+
+    if (currentAccount) {
+        if (loggedOut) loggedOut.style.display = 'none';
+        if (loggedIn) loggedIn.style.display = 'block';
+        if (emailEl) emailEl.textContent = currentAccount.email || 'Akaun Jom Baca';
+        if (stateEl) {
+            stateEl.textContent = currentPremium ? '✅ Versi penuh aktif' : '🎁 Akaun percuma';
+            stateEl.className = 'account-state' + (currentPremium ? ' premium' : '');
+        }
+        if (redeemArea) redeemArea.style.display = currentPremium ? 'none' : 'block';
+    } else {
+        if (loggedOut) loggedOut.style.display = 'block';
+        if (loggedIn) loggedIn.style.display = 'none';
+    }
+}
+
+function refreshPremiumScreen() {
+    renderAccountUI();
+    if (document.getElementById('stories')?.classList.contains('active') && storyLevel === null) {
+        renderStoryLevels();
+    }
+}
+
 function openPremiumModal() {
     const modal = document.getElementById('premiumModal');
-    const msg = document.getElementById('unlockMessage');
-    if (msg) msg.textContent = '';
+    setAuthMessage('');
+    renderAccountUI();
     if (modal) {
         modal.classList.add('show');
         modal.setAttribute('aria-hidden', 'false');
-        setTimeout(() => document.getElementById('unlockCode')?.focus(), 50);
+        setTimeout(() => {
+            const target = currentAccount ? document.getElementById('unlockCode') : document.getElementById('authEmail');
+            target?.focus();
+        }, 50);
     }
 }
+
 function closePremiumModal() {
     const modal = document.getElementById('premiumModal');
     if (modal) {
@@ -186,6 +269,7 @@ function closePremiumModal() {
         modal.setAttribute('aria-hidden', 'true');
     }
 }
+
 function buyPremium() {
     if (PURCHASE_WHATSAPP.includes('X')) {
         alert('Sila tukar PURCHASE_WHATSAPP dalam script.js kepada nombor WhatsApp anda dahulu.');
@@ -194,29 +278,196 @@ function buyPremium() {
     const text = encodeURIComponent(`Assalamualaikum, saya nak beli Jom Baca versi penuh ${PREMIUM_PRICE}.`);
     window.open(`https://wa.me/${PURCHASE_WHATSAPP}?text=${text}`, '_blank');
 }
-async function submitUnlockCode() {
-    const input = document.getElementById('unlockCode');
-    const msg = document.getElementById('unlockMessage');
-    const button = document.querySelector('.premium-unlock');
-    const code = (input?.value || '').trim().toUpperCase();
 
-    if (!code) {
-        if (msg) {
-            msg.textContent = 'Sila masukkan unlock code.';
-            msg.className = 'unlock-message error';
+async function supabaseAuthRequest(path, body) {
+    const { supabaseUrl, supabaseAnonKey } = getSupabaseConfig();
+    if (!hasSupabaseConfig()) throw new Error('Supabase belum dikonfigurasi.');
+    const response = await fetch(`${supabaseUrl}/auth/v1/${path}`, {
+        method: 'POST',
+        headers: {
+            'apikey': supabaseAnonKey,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+        throw new Error(data?.msg || data?.message || data?.error_description || 'Permintaan tidak berjaya.');
+    }
+    return data;
+}
+
+function getAuthFormValues() {
+    return {
+        email: (document.getElementById('authEmail')?.value || '').trim().toLowerCase(),
+        password: document.getElementById('authPassword')?.value || ''
+    };
+}
+
+function validateAuthForm(email, password) {
+    if (!email || !email.includes('@')) return 'Sila masukkan email yang sah.';
+    if (!password || password.length < 6) return 'Kata laluan mesti sekurang-kurangnya 6 aksara.';
+    return '';
+}
+
+async function signUpAccount() {
+    const { email, password } = getAuthFormValues();
+    const validation = validateAuthForm(email, password);
+    if (validation) return setAuthMessage(validation, 'error');
+
+    setAuthMessage('⏳ Sedang daftar akaun...');
+    try {
+        const data = await supabaseAuthRequest('signup', { email, password });
+        if (data?.access_token) {
+            saveAuthSession(data);
+            await loadPremiumStatus();
+            setAuthMessage('✅ Akaun berjaya didaftarkan dan anda telah log masuk.', 'success');
+        } else {
+            setAuthMessage('✅ Akaun berjaya didaftarkan. Sila semak email untuk pengesahan, kemudian log masuk.', 'success');
         }
+        renderAccountUI();
+    } catch (error) {
+        console.error('Signup error:', error);
+        setAuthMessage(friendlyAuthError(error.message), 'error');
+    }
+}
+
+async function loginAccount() {
+    const { email, password } = getAuthFormValues();
+    const validation = validateAuthForm(email, password);
+    if (validation) return setAuthMessage(validation, 'error');
+
+    setAuthMessage('⏳ Sedang log masuk...');
+    try {
+        const data = await supabaseAuthRequest('token?grant_type=password', { email, password });
+        saveAuthSession(data);
+        await loadPremiumStatus();
+        setAuthMessage(currentPremium ? '✅ Log masuk berjaya. Versi penuh anda telah dipulihkan.' : '✅ Log masuk berjaya.', 'success');
+        refreshPremiumScreen();
+    } catch (error) {
+        console.error('Login error:', error);
+        setAuthMessage(friendlyAuthError(error.message), 'error');
+    }
+}
+
+function friendlyAuthError(message = '') {
+    const m = message.toLowerCase();
+    if (m.includes('invalid login credentials')) return 'Email atau kata laluan tidak betul.';
+    if (m.includes('email not confirmed')) return 'Email belum disahkan. Sila semak inbox email anda.';
+    if (m.includes('user already registered')) return 'Email ini sudah didaftarkan. Sila log masuk.';
+    if (m.includes('password')) return 'Kata laluan tidak diterima. Gunakan sekurang-kurangnya 6 aksara.';
+    return message || 'Tidak dapat sambung ke akaun sekarang. Sila cuba lagi.';
+}
+
+async function refreshAccessToken() {
+    if (!currentRefreshToken) return false;
+    try {
+        const data = await supabaseAuthRequest('token?grant_type=refresh_token', { refresh_token: currentRefreshToken });
+        saveAuthSession(data);
+        return true;
+    } catch (error) {
+        console.warn('Refresh session failed:', error);
+        clearAuthSession();
+        return false;
+    }
+}
+
+async function authenticatedRpc(functionName, payload = {}, allowRefresh = true) {
+    const { supabaseUrl, supabaseAnonKey } = getSupabaseConfig();
+    if (!currentAccessToken) throw new Error('NOT_LOGGED_IN');
+
+    let response = await fetch(`${supabaseUrl}/rest/v1/rpc/${functionName}`, {
+        method: 'POST',
+        headers: {
+            'apikey': supabaseAnonKey,
+            'Authorization': `Bearer ${currentAccessToken}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    });
+
+    if (response.status === 401 && allowRefresh && await refreshAccessToken()) {
+        return authenticatedRpc(functionName, payload, false);
+    }
+
+    const data = await response.json().catch(() => null);
+    if (!response.ok) {
+        throw new Error(data?.message || `HTTP ${response.status}`);
+    }
+    return data;
+}
+
+async function loadPremiumStatus() {
+    if (!currentAccessToken) {
+        currentPremium = false;
+        return false;
+    }
+    try {
+        const result = await authenticatedRpc('get_my_premium_status');
+        currentPremium = result?.is_premium === true;
+        if (result?.email && currentAccount) currentAccount.email = result.email;
+        return currentPremium;
+    } catch (error) {
+        console.warn('Premium status error:', error);
+        currentPremium = false;
+        return false;
+    }
+}
+
+async function restoreAuthSession() {
+    if (!hasSupabaseConfig()) {
+        accountReady = true;
+        return;
+    }
+    let saved = null;
+    try { saved = JSON.parse(storage.get(AUTH_SESSION_KEY) || 'null'); } catch (e) {}
+    if (!saved?.refresh_token) {
+        accountReady = true;
+        renderAccountUI();
         return;
     }
 
-    const config = window.JOM_BACA_CONFIG || {};
-    const supabaseUrl = (config.supabaseUrl || '').replace(/\/+$/, '');
-    const supabaseAnonKey = config.supabaseAnonKey || '';
+    currentRefreshToken = saved.refresh_token;
+    currentAccessToken = saved.access_token || null;
+    currentAccount = saved.user || null;
 
-    if (!supabaseUrl || !supabaseAnonKey || supabaseUrl.includes('PASTE_') || supabaseAnonKey.includes('PASTE_')) {
-        if (msg) {
-            msg.textContent = 'Sistem unlock belum disambungkan. Sila hubungi penjual.';
-            msg.className = 'unlock-message error';
+    const refreshed = await refreshAccessToken();
+    if (refreshed) await loadPremiumStatus();
+    accountReady = true;
+    refreshPremiumScreen();
+}
+
+async function logoutAccount() {
+    const { supabaseUrl, supabaseAnonKey } = getSupabaseConfig();
+    try {
+        if (currentAccessToken) {
+            await fetch(`${supabaseUrl}/auth/v1/logout`, {
+                method: 'POST',
+                headers: {
+                    'apikey': supabaseAnonKey,
+                    'Authorization': `Bearer ${currentAccessToken}`
+                }
+            });
         }
+    } catch (error) {
+        console.warn('Logout request failed:', error);
+    }
+    clearAuthSession();
+    setAuthMessage('Anda telah log keluar.');
+    refreshPremiumScreen();
+}
+
+async function submitUnlockCode() {
+    const input = document.getElementById('unlockCode');
+    const button = document.querySelector('.premium-unlock');
+    const code = (input?.value || '').trim().toUpperCase();
+
+    if (!currentAccount || !currentAccessToken) {
+        setAuthMessage('Sila log masuk dahulu sebelum mengaktifkan unlock code.', 'error');
+        return;
+    }
+    if (!code) {
+        setAuthMessage('Sila masukkan unlock code.', 'error');
         return;
     }
 
@@ -224,69 +475,57 @@ async function submitUnlockCode() {
         button.disabled = true;
         button.textContent = '⏳ Semak code...';
     }
-    if (msg) {
-        msg.textContent = '';
-        msg.className = 'unlock-message';
-    }
+    setAuthMessage('');
 
     try {
-        const response = await fetch(`${supabaseUrl}/rest/v1/rpc/redeem_unlock_code`, {
-            method: 'POST',
-            headers: {
-                'apikey': supabaseAnonKey,
-                'Authorization': `Bearer ${supabaseAnonKey}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ p_code: code })
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        const result = await response.json();
-
-        if (result && result.success === true) {
-            storage.set('jomBacaPremium', 'yes');
+        const result = await authenticatedRpc('redeem_unlock_code', { p_code: code });
+        if (result?.success === true) {
+            currentPremium = true;
+            // Nilai lama tidak lagi digunakan untuk menentukan premium, tetapi dibersihkan supaya logout betul-betul mengunci akses.
+            try { localStorage.removeItem('jomBacaPremium'); } catch (e) {}
             storage.set('jomBacaRedeemedCode', code);
-
-            if (msg) {
-                msg.textContent = '🎉 Berjaya! Semua cerita telah dibuka.';
-                msg.className = 'unlock-message success';
-            }
-
-            setTimeout(() => {
-                closePremiumModal();
-                chooseStoryLevel();
-            }, 700);
+            setAuthMessage('🎉 Berjaya! Versi penuh telah diaktifkan pada akaun email ini.', 'success');
+            refreshPremiumScreen();
+            setTimeout(() => closePremiumModal(), 900);
         } else {
-            if (msg) {
-                msg.textContent =
-                    result?.reason === 'used'
-                        ? 'Code ini telah digunakan.'
-                        : 'Code tidak sah. Sila semak dan cuba lagi.';
-                msg.className = 'unlock-message error';
+            const reason = result?.reason;
+            const message = reason === 'used_by_you'
+                ? '✅ Code ini memang sudah aktif pada akaun anda.'
+                : reason === 'used'
+                    ? 'Code ini telah digunakan oleh akaun lain.'
+                    : 'Code tidak sah. Sila semak dan cuba lagi.';
+            setAuthMessage(message, reason === 'used_by_you' ? 'success' : 'error');
+            if (reason === 'used_by_you') {
+                currentPremium = true;
+                refreshPremiumScreen();
             }
         }
     } catch (error) {
         console.error('Unlock error:', error);
-        if (msg) {
-            msg.textContent = 'Tak dapat semak code sekarang. Sila cuba lagi.';
-            msg.className = 'unlock-message error';
-        }
+        setAuthMessage('Tak dapat semak code sekarang. Sila cuba lagi.', 'error');
     } finally {
         if (button) {
             button.disabled = false;
-            button.textContent = '🔓 Unlock Sekarang';
+            button.textContent = '🔓 Aktifkan Pada Akaun Ini';
         }
     }
 }
+
 function premiumStatusHTML() {
-    return isPremiumUnlocked()
-        ? '<div class="premium-status unlocked">✅ Versi penuh telah dibuka</div>'
-        : `<div class="free-trial-note"><b>🎁 Cuba 5 cerita PERCUMA</b><span>Akses semua tahap & cerita — ${PREMIUM_PRICE}</span><button onclick="openPremiumModal()">🔐 Buka Semua Cerita</button></div>`;
+    if (isPremiumUnlocked()) {
+        const email = currentAccount?.email ? ` • ${escapeHtml(currentAccount.email)}` : '';
+        return `<div class="premium-status unlocked">✅ Versi penuh aktif${email}<br><button class="account-link-button" onclick="openPremiumModal()">Akaun Saya</button></div>`;
+    }
+    if (currentAccount) {
+        return `<div class="free-trial-note"><b>👤 ${escapeHtml(currentAccount.email || 'Akaun Jom Baca')}</b><span>5 cerita percuma • Versi penuh belum aktif</span><button onclick="openPremiumModal()">🔐 Masukkan Unlock Code</button></div>`;
+    }
+    return `<div class="free-trial-note"><b>🎁 Cuba 5 cerita PERCUMA</b><span>Akses semua tahap & cerita — ${PREMIUM_PRICE}</span><button onclick="openPremiumModal()">👤 Log Masuk / Buka Versi Penuh</button></div>`;
 }
-// ===== END FREEMIUM CONFIG =====
+
+function escapeHtml(value = '') {
+    return String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+}
+// ===== END ACCOUNT + FREEMIUM CONFIG =====
 
 const savedStoryLevel = Number(storage.get('kvkStoryLevel')) || null;
 const savedStoryIndex = Number(storage.get('kvkStoryIndex')) || 0;
@@ -678,7 +917,9 @@ Object.assign(syllableMap, {
   tersenyum:['ter','se','nyum'],
   tikus:['ti','kus'],
   turun:['tu','run'],
-  yang:['yang']
+  yang:['yang'],
+  terfikir :['ter','fi','kir'],
+  balik : ['ba','lik'],
 });
 
 function colourSyllables(sentence) {
@@ -910,6 +1151,7 @@ speechSynthesis.onvoiceschanged = () => {};
 storyLevel = null;
 activeStories = stories;
 renderStoryLevels();
+restoreAuthSession();
 
 // ===== PWA INSTALL =====
 let deferredInstallPrompt = null;

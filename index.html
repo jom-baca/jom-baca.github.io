@@ -139,11 +139,36 @@
       <div class="premium-icon">🔐</div>
       <h2 id="premiumTitle">Buka Semua Cerita</h2>
       <p>5 cerita pertama adalah <b>PERCUMA</b>. Buka semua tahap dan cerita dengan hanya <b>RM9.90</b>.</p>
-      <button class="premium-buy" onclick="buyPremium()">💬 Beli RM9.90 melalui WhatsApp</button>
-      <div class="premium-divider"><span>Sudah bayar?</span></div>
-      <label class="premium-label" for="unlockCode">Masukkan unlock code</label>
-      <input id="unlockCode" class="premium-input" type="text" autocomplete="off" placeholder="Contoh: JB-7K2M-P9QX">
-      <button class="premium-unlock" onclick="submitUnlockCode()">🔓 Unlock Sekarang</button>
+
+      <div id="premiumLoggedOut">
+        <button class="premium-buy" onclick="buyPremium()">💬 Beli RM9.90 melalui WhatsApp</button>
+        <div class="premium-divider"><span>Sudah membeli?</span></div>
+        <p class="account-note">Daftar atau log masuk supaya versi penuh kekal pada akaun anda walaupun tukar telefon atau browser.</p>
+        <label class="premium-label" for="authEmail">Email</label>
+        <input id="authEmail" class="premium-input auth-input" type="email" autocomplete="email" placeholder="nama@email.com">
+        <label class="premium-label auth-password-label" for="authPassword">Kata laluan</label>
+        <input id="authPassword" class="premium-input auth-input" type="password" autocomplete="current-password" placeholder="Minimum 6 aksara">
+        <div class="auth-actions">
+          <button class="premium-login" onclick="loginAccount()">Log Masuk</button>
+          <button class="premium-signup" onclick="signUpAccount()">Daftar Akaun</button>
+        </div>
+      </div>
+
+      <div id="premiumLoggedIn" style="display:none">
+        <div class="account-box">
+          <div><b>👤 <span id="accountEmail"></span></b></div>
+          <div id="accountPremiumState" class="account-state">Semak status akaun...</div>
+          <button class="account-logout" onclick="logoutAccount()">Log Keluar</button>
+        </div>
+        <div id="redeemArea">
+          <div class="premium-divider"><span>Aktifkan versi penuh</span></div>
+          <label class="premium-label" for="unlockCode">Masukkan unlock code</label>
+          <input id="unlockCode" class="premium-input" type="text" autocomplete="off" placeholder="Contoh: JB-7K2M-P9QX">
+          <button class="premium-unlock" onclick="submitUnlockCode()">🔓 Aktifkan Pada Akaun Ini</button>
+          <p class="account-note small">Code hanya perlu dimasukkan sekali. Selepas itu, log masuk dengan email ini untuk akses semua cerita.</p>
+        </div>
+      </div>
+
       <p id="unlockMessage" class="unlock-message" aria-live="polite"></p>
     </div>
   </div>

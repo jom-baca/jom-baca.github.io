@@ -379,6 +379,8 @@ button {
     .level-card:nth-child(1) { background: linear-gradient(135deg, #eafff8, #f4fffc); border-color: #9cdecf; color: #28786c; }
     .level-card:nth-child(2) { background: linear-gradient(135deg, #fff7d9, #fffbed); border-color: #f4d36c; color: #866313; }
     .level-card:nth-child(3) { background: linear-gradient(135deg, #ffeaf2, #fff4f8); border-color: #efa5bd; color: #a64a6c; }
+    .level-card:nth-child(4) { background: linear-gradient(135deg, #f1ebff, #faf7ff); border-color: #c4b1ef; color: #654dcc; }
+    .level-card:nth-child(5) { background: linear-gradient(135deg, #eaf5ff, #f5fbff); border-color: #9dc9ee; color: #3974a8; }
     .level-card:hover, .level-card:focus { transform: translateY(-3px); outline: none }
 
 .prompt {
@@ -690,6 +692,23 @@ button:focus-visible {
 .unlock-message.success { color: #278366; }
 .unlock-message.error { color: #c95778; }
 /* ===== End freemium ===== */
+/* ===== Account login ===== */
+.account-note { margin: 8px 0 14px; color: #6e7483; font-size: .9rem; }
+.account-note.small { font-size: .82rem; margin-top: 10px; }
+.auth-input { text-transform: none; margin-bottom: 10px; }
+.auth-password-label { margin-top: 2px; }
+.auth-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+.premium-login, .premium-signup, .account-logout { padding: 13px 12px; border-radius: 15px; font-weight: 900; }
+.premium-login { background: #7257d9; color: #fff; }
+.premium-signup { background: #eee9ff; color: #5d49af; }
+.account-box { padding: 14px; border-radius: 17px; background: #f6f3ff; border: 2px solid #e3dcff; text-align: left; }
+.account-state { margin-top: 5px; color: #70778a; font-size: .9rem; font-weight: 800; }
+.account-state.premium { color: #278366; }
+.account-logout { width: 100%; margin-top: 11px; background: #fff; color: #755f8f; border: 2px solid #ded7f4; }
+.account-link-button { margin-top: 8px; padding: 7px 12px; border-radius: 999px; background: #fff; color: #28786c; border: 1px solid #9cdecf; font-size: .82rem; font-weight: 900; }
+@media (max-width: 390px) { .auth-actions { grid-template-columns: 1fr; } }
+/* ===== End account login ===== */
+
 
 .short-story-list-bottom { text-align: center; margin: 18px 0 14px; }
 

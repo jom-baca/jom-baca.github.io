@@ -1,5 +1,6 @@
--- JOM BACA: UNIQUE ONE-TIME UNLOCK CODE
--- Run semua SQL ini dalam Supabase > SQL Editor.
+-- JOM BACA: EMAIL ACCOUNT + PERMANENT PREMIUM ACCESS
+-- Run keseluruhan SQL ini dalam Supabase > SQL Editor.
+-- Ia selamat digunakan sebagai upgrade daripada setup unlock code lama.
 
 create extension if not exists pgcrypto;
 
@@ -11,12 +12,68 @@ create table if not exists public.unlock_codes (
   created_at timestamptz not null default now()
 );
 
+-- Tambah pemilik code untuk sistem akaun baru.
+alter table public.unlock_codes
+  add column if not exists used_by uuid references auth.users(id) on delete set null;
+
+create table if not exists public.profiles (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  email text,
+  is_premium boolean not null default false,
+  premium_since timestamptz,
+  redeemed_code text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
 alter table public.unlock_codes enable row level security;
+alter table public.profiles enable row level security;
 
--- Jangan benarkan browser baca / edit table secara terus.
+-- Browser tidak perlu akses table secara direct. Semua melalui RPC di bawah.
 revoke all on table public.unlock_codes from anon, authenticated;
+revoke all on table public.profiles from anon, authenticated;
 
--- RPC ini atomik: hanya satu request boleh berjaya redeem code yang sama.
+-- Semak status premium bagi user yang sedang login.
+create or replace function public.get_my_premium_status()
+returns jsonb
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_user_id uuid := auth.uid();
+  v_email text;
+  v_premium boolean := false;
+begin
+  if v_user_id is null then
+    raise exception 'Login required';
+  end if;
+
+  select email into v_email from auth.users where id = v_user_id;
+
+  insert into public.profiles(user_id, email)
+  values (v_user_id, v_email)
+  on conflict (user_id) do update
+     set email = excluded.email,
+         updated_at = now();
+
+  select is_premium into v_premium
+  from public.profiles
+  where user_id = v_user_id;
+
+  return jsonb_build_object(
+    'is_premium', coalesce(v_premium, false),
+    'email', v_email
+  );
+end;
+$$;
+
+revoke all on function public.get_my_premium_status() from public, anon;
+grant execute on function public.get_my_premium_status() to authenticated;
+
+-- Redeem code dan lekatkan premium kepada akaun login.
+-- Untuk pembeli lama: code lama yang used=true tetapi used_by masih NULL
+-- boleh dituntut oleh pemilik code selepas login.
 create or replace function public.redeem_unlock_code(p_code text)
 returns jsonb
 language plpgsql
@@ -24,39 +81,63 @@ security definer
 set search_path = public
 as $$
 declare
+  v_user_id uuid := auth.uid();
+  v_email text;
   v_id bigint;
-  v_exists boolean;
+  v_used boolean;
+  v_used_by uuid;
+  v_code text;
 begin
-  update public.unlock_codes
-     set used = true,
-         used_at = now()
-   where upper(code) = upper(trim(p_code))
-     and used = false
-  returning id into v_id;
-
-  if v_id is not null then
-    return jsonb_build_object('success', true, 'reason', 'redeemed');
+  if v_user_id is null then
+    return jsonb_build_object('success', false, 'reason', 'login_required');
   end if;
 
-  select exists(
-    select 1
-      from public.unlock_codes
-     where upper(code) = upper(trim(p_code))
-       and used = true
-  ) into v_exists;
+  select id, used, used_by, code
+    into v_id, v_used, v_used_by, v_code
+    from public.unlock_codes
+   where upper(code) = upper(trim(p_code))
+   for update;
 
-  if v_exists then
+  if v_id is null then
+    return jsonb_build_object('success', false, 'reason', 'invalid');
+  end if;
+
+  if v_used = true and v_used_by is not null and v_used_by <> v_user_id then
     return jsonb_build_object('success', false, 'reason', 'used');
   end if;
 
-  return jsonb_build_object('success', false, 'reason', 'invalid');
+  select email into v_email from auth.users where id = v_user_id;
+
+  -- Baru atau legacy code: assign kepada akaun semasa.
+  update public.unlock_codes
+     set used = true,
+         used_at = coalesce(used_at, now()),
+         used_by = v_user_id
+   where id = v_id;
+
+  insert into public.profiles(user_id, email, is_premium, premium_since, redeemed_code)
+  values (v_user_id, v_email, true, now(), v_code)
+  on conflict (user_id) do update
+     set email = excluded.email,
+         is_premium = true,
+         premium_since = coalesce(public.profiles.premium_since, now()),
+         redeemed_code = coalesce(public.profiles.redeemed_code, excluded.redeemed_code),
+         updated_at = now();
+
+  if v_used = true and v_used_by = v_user_id then
+    return jsonb_build_object('success', false, 'reason', 'used_by_you');
+  end if;
+
+  return jsonb_build_object('success', true, 'reason',
+    case when v_used = true then 'legacy_claimed' else 'redeemed' end
+  );
 end;
 $$;
 
-revoke all on function public.redeem_unlock_code(text) from public;
-grant execute on function public.redeem_unlock_code(text) to anon;
+revoke all on function public.redeem_unlock_code(text) from public, anon;
+grant execute on function public.redeem_unlock_code(text) to authenticated;
 
--- Helper untuk generate code. Guna dalam SQL Editor sahaja.
+-- Helper generate code. Guna dalam SQL Editor sahaja.
 create or replace function public.generate_unlock_codes(p_count integer default 20)
 returns table(code text)
 language plpgsql
@@ -81,7 +162,7 @@ begin
         insert into public.unlock_codes(code) values (v_code);
         exit;
       exception when unique_violation then
-        -- cuba code lain
+        null;
       end;
     end loop;
 
@@ -91,13 +172,17 @@ begin
 end;
 $$;
 
--- Jangan expose generator kepada browser.
 revoke all on function public.generate_unlock_codes(integer) from public, anon, authenticated;
 
--- Contoh selepas setup:
+-- Generate code baru:
 -- select * from public.generate_unlock_codes(20);
---
--- Semak code:
--- select code, used, used_at, created_at
+
+-- Semak code dan pemilik:
+-- select code, used, used_at, used_by, created_at
 -- from public.unlock_codes
 -- order by id desc;
+
+-- Semak akaun premium:
+-- select user_id, email, is_premium, premium_since, redeemed_code
+-- from public.profiles
+-- order by created_at desc;

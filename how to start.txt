@@ -1,3 +1,5 @@
 npx --yes http-server -p 8000
 
+
+sql password
 jombaca2026

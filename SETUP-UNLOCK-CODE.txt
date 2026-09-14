@@ -1,48 +1,29 @@
-JOM BACA - SETUP UNIQUE ONE-TIME UNLOCK CODE
+JOM BACA - SETUP AKAUN EMAIL + VERSI PENUH
 
-1. Pergi ke https://supabase.com dan create project baru.
+1. Buka Supabase Dashboard > project Jom Baca > SQL Editor.
+2. Copy semua isi fail supabase-setup.sql dan Run.
+3. Pergi Authentication > Providers > Email. Pastikan Email provider ENABLED.
+4. Untuk setup paling mudah semasa testing, boleh matikan "Confirm email" dahulu.
+   Jika Confirm email ON, user perlu klik link pengesahan dalam email sebelum boleh login.
+5. Deploy semua fail website yang telah dikemaskini.
 
-2. Dalam Supabase:
-   SQL Editor -> New query
-   Copy semua kandungan "supabase-setup.sql" -> Run.
+FLOW CUSTOMER BARU
+- Beli RM9.90 melalui WhatsApp.
+- Daftar / login menggunakan email.
+- Masukkan unlock code sekali.
+- Code akan attach kepada akaun tersebut.
+- Selepas itu user hanya perlu login untuk dapat semula versi penuh.
 
-3. Pergi:
-   Project Settings -> API
+FLOW CUSTOMER LAMA
+- Daftar / login menggunakan email.
+- Masukkan semula unlock code lama.
+- Jika code lama pernah digunakan sebelum sistem akaun dan used_by masih kosong,
+  sistem akan attach code itu kepada akaun email tersebut.
 
-   Copy:
-   - Project URL
-   - anon / publishable key
+GENERATE CODE BARU
+select * from public.generate_unlock_codes(20);
 
-4. Buka "config.js" dan isi:
-
-   window.JOM_BACA_CONFIG = {
-     supabaseUrl: 'https://xxxx.supabase.co',
-     supabaseAnonKey: 'YOUR_ANON_KEY'
-   };
-
-5. Generate code:
-   Dalam Supabase SQL Editor run:
-
-   select * from public.generate_unlock_codes(20);
-
-   Ia akan hasilkan code seperti:
-   JB-A1B2-C3D4
-
-6. Customer bayar -> beri satu code.
-
-7. Bila customer redeem:
-   - code valid & belum guna -> unlock berjaya
-   - database terus mark used=true
-   - code sama tak boleh digunakan kali kedua
-
-8. Untuk tengok semua code:
-   select code, used, used_at, created_at
-   from public.unlock_codes
-   order by id desc;
-
-PENTING:
-- Jangan letak service_role key dalam website.
-- Hanya guna anon/publishable key dalam config.js.
-- Selepas redeem, premium disimpan dalam localStorage browser.
-- Jika customer clear browser data / tukar device, code lama sudah used.
-  Untuk kes genuine, anda boleh generate code baru secara manual.
+SEMAK USER PREMIUM
+select user_id, email, is_premium, premium_since, redeemed_code
+from public.profiles
+order by created_at desc;
