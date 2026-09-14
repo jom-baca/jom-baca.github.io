@@ -332,6 +332,73 @@ async function signUpAccount() {
     }
 }
 
+async function forgotPassword() {
+    const email = (document.getElementById('authEmail')?.value || '').trim().toLowerCase();
+    if (!email || !email.includes('@')) return setAuthMessage('Sila masukkan email anda dahulu.', 'error');
+    if (!hasSupabaseConfig()) return setAuthMessage('Supabase belum dikonfigurasi.', 'error');
+
+    setAuthMessage('⏳ Sedang hantar email reset kata laluan...');
+    try {
+        const { supabaseUrl, supabaseAnonKey } = getSupabaseConfig();
+        // Supabase akan kembali ke halaman Jom Baca selepas pengguna klik pautan dalam email.
+        const redirectTo = window.location.href.split('#')[0].split('?')[0];
+        const response = await fetch(`${supabaseUrl}/auth/v1/recover?redirect_to=${encodeURIComponent(redirectTo)}`, {
+            method: 'POST',
+            headers: { 'apikey': supabaseAnonKey, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data?.msg || data?.message || 'Tidak dapat menghantar email reset.');
+        setAuthMessage('✅ Email reset telah dihantar. Sila semak inbox dan folder spam.', 'success');
+    } catch (error) {
+        console.error('Password recovery error:', error);
+        setAuthMessage(friendlyAuthError(error.message), 'error');
+    }
+}
+
+function getRecoverySessionFromUrl() {
+    const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+    if (hash.get('type') !== 'recovery' || !hash.get('access_token')) return false;
+    currentAccessToken = hash.get('access_token');
+    currentRefreshToken = hash.get('refresh_token') || null;
+    const area = document.getElementById('resetPasswordArea');
+    if (area) area.style.display = 'block';
+    openPremiumModal();
+    setAuthMessage('🔐 Masukkan kata laluan baru anda.', 'success');
+    setTimeout(() => document.getElementById('newPassword')?.focus(), 100);
+    return true;
+}
+
+async function updatePassword() {
+    const password = document.getElementById('newPassword')?.value || '';
+    if (password.length < 6) return setAuthMessage('Kata laluan mesti sekurang-kurangnya 6 aksara.', 'error');
+    if (!currentAccessToken) return setAuthMessage('Pautan reset tidak sah atau telah tamat tempoh. Sila minta pautan baru.', 'error');
+
+    setAuthMessage('⏳ Sedang simpan kata laluan baru...');
+    try {
+        const { supabaseUrl, supabaseAnonKey } = getSupabaseConfig();
+        const response = await fetch(`${supabaseUrl}/auth/v1/user`, {
+            method: 'PUT',
+            headers: {
+                'apikey': supabaseAnonKey,
+                'Authorization': `Bearer ${currentAccessToken}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ password })
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data?.msg || data?.message || 'Tidak dapat menukar kata laluan.');
+        const area = document.getElementById('resetPasswordArea');
+        if (area) area.style.display = 'none';
+        document.getElementById('newPassword').value = '';
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        setAuthMessage('✅ Kata laluan berjaya ditukar. Anda boleh log masuk menggunakan kata laluan baru.', 'success');
+    } catch (error) {
+        console.error('Update password error:', error);
+        setAuthMessage(friendlyAuthError(error.message), 'error');
+    }
+}
+
 async function loginAccount() {
     const { email, password } = getAuthFormValues();
     const validation = validateAuthForm(email, password);
@@ -1248,6 +1315,7 @@ function closeManualInstallGuide(){
 
 document.addEventListener('DOMContentLoaded',()=>{
   updateInstallButtonVisibility();
+  getRecoverySessionFromUrl();
   // iPhone/iPad tidak menyokong beforeinstallprompt. Tunjuk panduan Safari sekali
   // apabila laman dibuka dan belum dipasang sebagai standalone.
   if(isIosDevice() && !isStandaloneMode()){

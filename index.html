@@ -152,6 +152,13 @@
           <button class="premium-login" onclick="loginAccount()">Log Masuk</button>
           <button class="premium-signup" onclick="signUpAccount()">Daftar Akaun</button>
         </div>
+        <button class="forgot-password" onclick="forgotPassword()">Lupa kata laluan?</button>
+        <div id="resetPasswordArea" class="reset-password-area" style="display:none">
+          <div class="premium-divider"><span>Tetapkan kata laluan baru</span></div>
+          <label class="premium-label" for="newPassword">Kata laluan baru</label>
+          <input id="newPassword" class="premium-input auth-input" type="password" autocomplete="new-password" placeholder="Minimum 6 aksara">
+          <button class="premium-login reset-password-button" onclick="updatePassword()">Simpan Kata Laluan Baru</button>
+        </div>
       </div>
 
       <div id="premiumLoggedIn" style="display:none">
